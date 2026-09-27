@@ -209,6 +209,8 @@ class WizardTests(unittest.TestCase):
         self.assertFalse(self.runner.calls)
 
     def test_demo_button_creates_and_previews_plan_without_running(self):
+        # The expected folder and plan text are Russian; runner locale varies.
+        self.window.set_language("ru")
         parent = self.base / "tutorials"
         parent.mkdir()
         with patch.object(self.window, "_file_dialog", return_value=str(parent)):
