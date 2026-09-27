@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "expected": {
+    "version": "4.5.1",
+    "orchestration_schema": 1,
+    "roles": ["chief", "assistant", "worker", "verifier"]
+  },
+  "cli_actions": ["plan", "task", "claim", "checkpoint", "verify", "handoff", "status", "report", "registry", "approve", "parity"],
+  "required_checks": ["python -m unittest discover -s tests", "ai-dev stress-test --projects 3", "ai-dev windows-check --json"]
+}

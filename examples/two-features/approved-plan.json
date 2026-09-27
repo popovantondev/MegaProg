@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "plan_id": "two-functions-demo",
+  "objective": "Implement and verify two small calculator functions in sequence.",
+  "budget": {
+    "max_model_turns": 2
+  },
+  "features": [
+    {
+      "id": "addition",
+      "title": "Addition",
+      "acceptance": [
+        "add(a, b) returns the sum of two numbers."
+      ],
+      "checks": [
+        [
+          "python3",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_add.py",
+          "-v"
+        ]
+      ]
+    },
+    {
+      "id": "multiplication",
+      "title": "Multiplication",
+      "acceptance": [
+        "multiply(a, b) returns the product of two numbers."
+      ],
+      "checks": [
+        [
+          "python3",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_multiply.py",
+          "-v"
+        ]
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "implement-add",
+      "feature_id": "addition",
+      "title": "Implement addition",
+      "instructions": "Implement only add(a, b) in src/calculator.py. Keep the existing function signature and do not change multiply.",
+      "depends_on": [],
+      "allowed_paths": [
+        "src/calculator.py"
+      ],
+      "checks": [
+        [
+          "python3",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_add.py",
+          "-v"
+        ]
+      ]
+    },
+    {
+      "id": "implement-multiply",
+      "feature_id": "multiplication",
+      "title": "Implement multiplication",
+      "instructions": "Implement only multiply(a, b) in src/calculator.py. Keep add unchanged.",
+      "depends_on": [
+        "implement-add"
+      ],
+      "allowed_paths": [
+        "src/calculator.py"
+      ],
+      "checks": [
+        [
+          "python3",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_multiply.py",
+          "-v"
+        ]
+      ]
+    }
+  ]
+}

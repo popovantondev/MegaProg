@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ai-dev/
+build/
+dist/
+releases/
+*.spec
+.pytest_cache/
+DEVELOPMENT_MEMORY.local.md

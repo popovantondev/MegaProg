@@ -1,0 +1,13 @@
+{
+  "name": "megaprog-mcp-host",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "optionalDependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "3.25.76"
+  },
+  "scripts": {
+    "mcp-host": "node mcp_host/megaprog-mcp-host.mjs"
+  }
+}
