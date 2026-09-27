@@ -3,7 +3,7 @@
 ## Final release candidate, 2026-09-27
 
 - Final offline suite: 556 tests run, 553 passed, 3 skipped. The public source snapshot and its packaged app passed source release-check, strict macOS signature verification, CLI help and window startup with a fresh `HOME` in the current user account.
-- The exact packaged app was used for a real tutorial run: both calculator functions reached `VERIFIED`; both tasks reached `COMPLETED` after one attempt each. The saved plan reports 2/2 worker turns. The first task remained complete when work continued after the pause.
+- A 4.5.1 app build with the same runtime code was used for a real tutorial run: both calculator functions reached `VERIFIED`; both tasks reached `COMPLETED` after one attempt each. The saved plan reports 2/2 worker turns. The first task remained complete when work continued after the pause. The final release archive was rebuilt after documentation and test-only changes; it did not run additional model turns.
 - Saved usage for that run: 115,471 input tokens, including 104,448 cached input tokens; 789 output tokens, including 82 reasoning tokens. No direct-Codex comparison was performed.
 - Six localized screenshots of the tutorial plan and completed state are in `docs/screenshots/`. They use the saved completed state with translated demonstration text and a placeholder path. Private paths and usage figures are omitted from the images.
 - These results were obtained locally. GitHub Actions results are published on the [workflow page](https://github.com/popovantondev/MegaProg/actions/workflows/tests.yml). A separate macOS account and a second Mac have not been checked.

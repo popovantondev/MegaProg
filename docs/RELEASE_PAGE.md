@@ -34,7 +34,7 @@ This first package targets Apple Silicon. Intel Mac and Windows are not verified
 
 ## Verification
 
-Built on Apple Silicon macOS 15.7.4. The final offline suite ran 556 tests: 553 passed, 3 skipped. The exact packaged app completed both tutorial functions with real Codex in two worker turns, including a pause and continuation without repeating the first task. See `docs/PREVIEW_VALIDATION_REPORT.md` and the exact release receipt for package checks. This single trial does not establish quota savings.
+Built on Apple Silicon macOS 15.7.4. The final offline suite ran 556 tests: 553 passed, 3 skipped. A 4.5.1 build with the same application code completed both tutorial functions with real Codex in two worker turns, including a pause and continuation without repeating the first task. The release archive was rebuilt after documentation and test-only changes. See `docs/PREVIEW_VALIDATION_REPORT.md` and the exact release receipt for package checks. This single trial does not establish quota savings.
 
 ## License
 
@@ -80,7 +80,7 @@ MegaProg выполняет план, который вы проверили и 
 
 ## Проверки
 
-Сборка подготовлена для Apple Silicon на macOS 15.7.4. Итоговый офлайн-набор: 556 тестов, 553 пройдены, 3 пропущены. Точное приложение из пакета выполнило обе учебные функции через настоящий Codex за два хода исполнителя: после паузы первая задача не повторилась. Подробнее — в `docs/ru/PREVIEW_VALIDATION_REPORT.md` и отчёте точного пакета. Один прогон не доказывает экономию лимитов.
+Сборка подготовлена для Apple Silicon на macOS 15.7.4. Итоговый офлайн-набор: 556 тестов, 553 пройдены, 3 пропущены. Сборка 4.5.1 с тем же кодом приложения выполнила обе учебные функции через настоящий Codex за два хода исполнителя: после паузы первая задача не повторилась. Архив выпуска пересобран после изменений только в документации и тесте. Подробнее — в `docs/ru/PREVIEW_VALIDATION_REPORT.md` и отчёте точного пакета. Один прогон не доказывает экономию лимитов.
 
 ## Лицензия
 
@@ -126,7 +126,7 @@ Testen Sie den [Beispielplan mit zwei Funktionen](../examples/two-features/appro
 
 ## Prüfungen
 
-Auf Apple Silicon mit macOS 15.7.4 vorbereitet. Abschließende Offline-Suite: 556 Tests, 553 bestanden, 3 übersprungen. Die App aus dem genauen Paket erledigte beide Übungsfunktionen mit echtem Codex in zwei Arbeitsrunden; nach der Pause wurde die erste Aufgabe nicht wiederholt. Details stehen in `docs/de/PREVIEW_VALIDATION_REPORT.md` und im Bericht zum genauen Paket. Dieser einzelne Lauf beweist keine Einsparung von Codex-Kontingenten.
+Auf Apple Silicon mit macOS 15.7.4 vorbereitet. Abschließende Offline-Suite: 556 Tests, 553 bestanden, 3 übersprungen. Ein 4.5.1-Build mit demselben Anwendungscode erledigte beide Übungsfunktionen mit echtem Codex in zwei Arbeitsrunden; nach der Pause wurde die erste Aufgabe nicht wiederholt. Das Release-Archiv wurde nach Änderungen nur an Dokumentation und Test neu gebaut. Details stehen in `docs/de/PREVIEW_VALIDATION_REPORT.md` und im Bericht zum genauen Paket. Dieser einzelne Lauf beweist keine Einsparung von Codex-Kontingenten.
 
 ## Lizenz
 

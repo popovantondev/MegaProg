@@ -3,7 +3,7 @@
 ## Finaler Kandidat, 27. September 2026
 
 - Abschließende Offline-Suite: 556 Tests, 553 bestanden, 3 übersprungen. Der öffentliche Quellstand und die gepackte App bestanden den Source-Release-Check, die strenge macOS-Signaturprüfung, die CLI-Prüfung und den Fensterstart mit leerem `HOME` im aktuellen Benutzerkonto.
-- Die App aus dem genauen Paket führte das echte Übungsprojekt aus: Beide Rechenfunktionen erhielten `VERIFIED`, beide Aufgaben `COMPLETED` nach je einem Versuch. Der gespeicherte Plan zeigt 2/2 Arbeitsrunden. Nach der Pause wurde die erste Aufgabe nicht wiederholt.
+- Ein 4.5.1-Build mit demselben Anwendungscode führte das echte Übungsprojekt aus: Beide Rechenfunktionen erhielten `VERIFIED`, beide Aufgaben `COMPLETED` nach je einem Versuch. Der gespeicherte Plan zeigt 2/2 Arbeitsrunden. Nach der Pause wurde die erste Aufgabe nicht wiederholt. Das endgültige Archiv wurde nach Änderungen nur an Dokumentation und Test neu gebaut; weitere Modellrunden wurden nicht gestartet.
 - Gespeicherte Nutzungswerte dieses Laufs: 115.471 Eingabetoken, davon 104.448 zwischengespeichert; 789 Ausgabetoken, davon 82 Reasoning-Token. Ein Vergleich mit direkter Codex-Nutzung wurde nicht durchgeführt.
 - Sechs Sprachbilder von Plan und Ergebnis liegen in `docs/screenshots/`. Sie nutzen den gespeicherten Abschluss mit übersetztem Beispieltext und Platzhalterpfad. Private Pfade und Nutzungswerte sind nicht in den Bildern enthalten.
 - Diese Prüfungen erfolgten lokal. Die Ergebnisse von GitHub Actions stehen auf der [Workflow-Seite](https://github.com/popovantondev/MegaProg/actions/workflows/tests.yml). Ein separates macOS-Konto und ein zweiter Mac wurden nicht geprüft.
