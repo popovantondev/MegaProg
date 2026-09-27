@@ -6,7 +6,7 @@
 - The exact packaged app was used for a real tutorial run: both calculator functions reached `VERIFIED`; both tasks reached `COMPLETED` after one attempt each. The saved plan reports 2/2 worker turns. The first task remained complete when work continued after the pause.
 - Saved usage for that run: 115,471 input tokens, including 104,448 cached input tokens; 789 output tokens, including 82 reasoning tokens. No direct-Codex comparison was performed.
 - Six localized screenshots of the tutorial plan and completed state are in `docs/screenshots/`. They use the saved completed state with translated demonstration text and a placeholder path. Private paths and usage figures are omitted from the images.
-- The source tree is public; these results were obtained locally. A separate macOS account, a second Mac and remote GitHub Actions have not been checked.
+- These results were obtained locally. GitHub Actions results are published on the [workflow page](https://github.com/popovantondev/MegaProg/actions/workflows/tests.yml). A separate macOS account and a second Mac have not been checked.
 
 The older measurements below describe earlier 4.5.1 checkpoints and are retained as history.
 
@@ -44,6 +44,6 @@ The exact archive's build, signature, checksum, source manifest and Cocoa GUI
 results belong in the candidate's separate review receipt. Do not infer
 those results from unit tests or from the live run on the corrected candidate.
 
-A separate clean macOS user account, a second Mac, remote GitHub Actions,
+A separate clean macOS user account, a second Mac,
 Windows and Intel remain unverified. Developer ID and notarization are not
 included. No claim of proven Codex quota savings is made.

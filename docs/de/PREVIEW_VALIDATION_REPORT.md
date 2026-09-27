@@ -6,7 +6,7 @@
 - Die App aus dem genauen Paket führte das echte Übungsprojekt aus: Beide Rechenfunktionen erhielten `VERIFIED`, beide Aufgaben `COMPLETED` nach je einem Versuch. Der gespeicherte Plan zeigt 2/2 Arbeitsrunden. Nach der Pause wurde die erste Aufgabe nicht wiederholt.
 - Gespeicherte Nutzungswerte dieses Laufs: 115.471 Eingabetoken, davon 104.448 zwischengespeichert; 789 Ausgabetoken, davon 82 Reasoning-Token. Ein Vergleich mit direkter Codex-Nutzung wurde nicht durchgeführt.
 - Sechs Sprachbilder von Plan und Ergebnis liegen in `docs/screenshots/`. Sie nutzen den gespeicherten Abschluss mit übersetztem Beispieltext und Platzhalterpfad. Private Pfade und Nutzungswerte sind nicht in den Bildern enthalten.
-- Diese Prüfungen erfolgten lokal. Ein separates macOS-Konto, ein zweiter Mac und GitHub Actions wurden noch nicht geprüft.
+- Diese Prüfungen erfolgten lokal. Die Ergebnisse von GitHub Actions stehen auf der [Workflow-Seite](https://github.com/popovantondev/MegaProg/actions/workflows/tests.yml). Ein separates macOS-Konto und ein zweiter Mac wurden nicht geprüft.
 
 Die älteren Messwerte darunter dokumentieren frühere 4.5.1-Zwischenstände.
 
@@ -45,6 +45,6 @@ Pakets werden im separaten Kandidatenbericht festgehalten. Einheitstests
 oder der echte Lauf auf dem korrigierten Kandidaten belegen diese Schritte
 nicht automatisch.
 
-Ein separates frisches macOS-Konto, ein zweiter Mac, entfernte GitHub Actions,
+Ein separates frisches macOS-Konto, ein zweiter Mac,
 Windows und Intel sind ungeprüft. Kein Developer ID und keine Notarisierung.
 Keine Behauptung nachgewiesener Codex-Kontingenteinsparung.
