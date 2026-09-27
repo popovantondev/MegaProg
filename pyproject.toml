@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "megaprog"
+dynamic = ["version"]
+description = "Desktop app for approved, verified Codex plans"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["PySide6==6.10.2"]
+
+[project.scripts]
+ai-dev = "ai_dev.cli:main"
+megaprog = "ai_dev.plan_gui:main"
+
+[tool.setuptools.packages.find]
+include = ["ai_dev*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ai_dev.version.__version__"}
+
+[tool.setuptools.package-data]
+ai_dev = ["*.cmd"]
+
+[tool.setuptools.data-files]
+"share/megaprog/assets" = ["assets/*.svg", "assets/megaprog.icns"]

@@ -1,0 +1,82 @@
+{
+  "contract_sha256": "5084f2c74271eed232660abbb2b49207d5e85e0153ed76274f24747372908911",
+  "forbidden_capabilities": [
+    "shell",
+    "git",
+    "filesystem",
+    "source",
+    "model",
+    "browser",
+    "network",
+    "write"
+  ],
+  "manifest_version": 1,
+  "name": "megaprog-advisory",
+  "official_sdk": {
+    "node": "@modelcontextprotocol/sdk>=1,<2"
+  },
+  "persistence": "Only validated untrusted advisory artifacts may be written.",
+  "tools": [
+    {
+      "description": "Return a bounded, read-only MegaProg advisory review batch.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "max_bytes": {
+            "minimum": 256,
+            "type": "integer"
+          },
+          "max_items": {
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get_review_batch"
+    },
+    {
+      "description": "Store one validated untrusted advisory response for an issued review batch.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "advisory": {},
+          "bundle_id": {
+            "pattern": "^[0-9a-f]{24}$",
+            "type": "string"
+          },
+          "contract_version": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "repo_state_hash": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "task_hash": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "contract_version",
+          "task_id",
+          "task_hash",
+          "bundle_id",
+          "repo_state_hash",
+          "advisory"
+        ],
+        "type": "object"
+      },
+      "name": "submit_review_batch"
+    }
+  ],
+  "transport": {
+    "path": "/mcp",
+    "required": "streamable-http"
+  }
+}
