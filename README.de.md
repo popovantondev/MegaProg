@@ -10,7 +10,9 @@ MegaProg ist eine macOS-App, die freigegebene Entwicklungspläne mit OpenAI Code
 
 ## Demo: zwei Rechenfunktionen
 
-<img src="docs/screenshots/de-plan.png" width="49%" alt="Planprüfung auf Deutsch"> <img src="docs/screenshots/de-result.png" width="49%" alt="Geprüftes Ergebnis auf Deutsch">
+<a href="docs/screenshots/de-plan.png"><img src="docs/screenshots/de-plan.png" width="100%" alt="Planprüfung auf Deutsch"></a>
+
+<a href="docs/screenshots/de-result.png"><img src="docs/screenshots/de-result.png" width="100%" alt="Geprüftes Ergebnis auf Deutsch"></a>
 
 Die Bilder zeigen den Übungsplan und seinen Abschluss nach zwei echten Codex-Arbeitsrunden. Der Text wurde für die Anzeige übersetzt, der Projektpfad durch einen Platzhalter ersetzt und private Daten sowie Nutzungswerte entfernt. [Russische](README.ru.md#пример-две-функции-калькулятора) und [englische](README.md#demo-two-calculator-functions) Bilder stehen in den jeweiligen Anleitungen.
 
