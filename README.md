@@ -1,5 +1,7 @@
 # MegaProg
 
+[User guide](https://popovantondev.github.io/MegaProg/Guide-en.html)
+
 **[Download for macOS](https://github.com/popovantondev/MegaProg/releases) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
 
 **Apple Silicon · 4.5.1 Preview · GPL-3.0-only**
