@@ -10,7 +10,9 @@ MegaProg — приложение для macOS, которое выполняе�
 
 ## Пример: две функции калькулятора
 
-<img src="docs/screenshots/ru-plan.png" width="49%" alt="Просмотр плана на русском"> <img src="docs/screenshots/ru-result.png" width="49%" alt="Проверенный результат на русском">
+<a href="docs/screenshots/ru-plan.png"><img src="docs/screenshots/ru-plan.png" width="100%" alt="Просмотр плана на русском"></a>
+
+<a href="docs/screenshots/ru-result.png"><img src="docs/screenshots/ru-result.png" width="100%" alt="Проверенный результат на русском"></a>
 
 Снимки показывают учебный план и состояние после двух настоящих ходов Codex. Текст плана для показа переведён; путь проекта заменён условным, личные данные и показатели расхода убраны. Скриншоты [на немецком](README.de.md#demo-zwei-rechenfunktionen) и [английском](README.md#demo-two-calculator-functions) находятся в соответствующих инструкциях.
 
