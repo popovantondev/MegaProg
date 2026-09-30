@@ -17,7 +17,7 @@ CANONICAL_GOAL = (
     "verify results, and improve only through the verified canonical MegaProg repository"
 )
 POLICY_HEADING = "Self-improvement policy"
-POLICY_FILES = ("AGENTS.md", "README.md", "ДЛЯ_ДРУГОГО_ЧАТА.txt")
+POLICY_FILES = ("CONTRIBUTING.md", "README.md", "ДЛЯ_ДРУГОГО_ЧАТА.txt")
 FORBIDDEN_PREFIXES = (".ai-dev/", ".git/")
 FORBIDDEN_NAMES = {"state", "state.json", "resume", "resume.json", "lessons.json"}
 
@@ -36,7 +36,7 @@ SELF_IMPROVEMENT_PROMPT = """Self-improvement protocol (canonical MegaProg only)
 - Parallel chats use separate worktrees and separate state/resume files; they
   never write the same workspace concurrently.
 - An explicitly enabled canonical self-repair campaign may build an isolated
-  candidate under the owner-authorized protocol in AGENTS.md. Only the trusted
+  candidate under the owner-authorized protocol in CONTRIBUTING.md. Only the trusted
   repair controller can review, verify and promote it after workers are idle.
   The model itself must never apply, commit or publish its own candidate.
 """

@@ -10,7 +10,7 @@ from .version import __version__ as CURRENT_VERSION
 
 
 REQUIRED_FILES = (
-    '.gitignore', 'AGENTS.md', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
+    '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
     'README.ru.md', 'README.de.md', 'ДЛЯ_ДРУГОГО_ЧАТА.txt', 'SECURITY.md',
     'SECURITY.ru.md', 'SECURITY.de.md', 'CHANGELOG.md', '.github/workflows/tests.yml',
     'THIRD_PARTY_NOTICES.md', 'pyproject.toml',

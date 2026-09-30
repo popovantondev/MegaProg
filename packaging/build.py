@@ -16,7 +16,7 @@ DIST = Path(os.environ.get('MEGAPROG_BUILD_DIR', str(ROOT / 'releases')))
 sys.path.insert(0, str(ROOT))
 from ai_dev.version import __version__ as VERSION
 
-ROOT_FILES = ('.gitignore', 'AGENTS.md', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
+ROOT_FILES = ('.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
               'README.ru.md', 'README.de.md', 'ДЛЯ_ДРУГОГО_ЧАТА.txt', 'SECURITY.md',
               'SECURITY.ru.md', 'SECURITY.de.md', 'CHANGELOG.md', '.github/workflows/tests.yml',
               'THIRD_PARTY_NOTICES.md', 'pyproject.toml', 'requirements-build.txt', 'ai-dev', 'ai-dev.cmd', 'package.json', 'package-lock.json', 'launch_gui.py',
