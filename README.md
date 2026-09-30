@@ -8,7 +8,7 @@
 
 <p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Review a plan. Run it. Keep your progress.</strong></p>
 
-MegaProg is a macOS desktop app that runs approved software plans through OpenAI Codex. It stores requirements and progress in your project, runs tasks one at a time, and performs the checks listed in the plan.
+MegaProg is a macOS desktop app that runs approved software plans through the connected execution service. It stores requirements and progress in your project, runs tasks one at a time, and performs the checks listed in the plan.
 
 ## Demo: two calculator functions
 
@@ -16,19 +16,19 @@ MegaProg is a macOS desktop app that runs approved software plans through OpenAI
 
 <a href="docs/screenshots/en-result.png"><img src="docs/screenshots/en-result.png" width="100%" alt="English verified result"></a>
 
-The screenshots show the tutorial plan and its completed state after two Codex worker turns. The display uses translated demo text and a placeholder project path; private project data and usage details are omitted. [German](README.de.md#demo-zwei-rechenfunktionen) and [Russian](README.ru.md#пример-две-функции-калькулятора) screenshots are available in their own guides.
+The screenshots show the tutorial plan and its completed state after two task runs. The display uses translated demo text and a placeholder project path; private project data and usage details are omitted. [German](README.de.md#demo-zwei-rechenfunktionen) and [Russian](README.ru.md#пример-две-функции-калькулятора) screenshots are available in their own guides.
 
-**ChatGPT cannot see files on your Mac unless you attach them.** Discuss a goal in ChatGPT, provide relevant project details, review the proposed plan, and save the final JSON file. Open and approve it in MegaProg.
+Prepare a JSON plan with the goal, permitted files, acceptance criteria and verification commands. Review the plan before opening and approving it in MegaProg. Project information shared with an external service must be reviewed first.
 
 ## What it does
 
 - Keeps requirements and the task queue outside chat history.
-- Runs Codex tasks in order within a shared model-turn budget.
+- Runs approved tasks in order within a shared execution budget.
 - Runs plan-defined checks and saves their results.
 - Saves progress so work can be paused and continued later.
 - Shows progress, available usage data, and why a task stopped.
 
-MegaProg does not guarantee that a plan captures every requirement, that generated code is correct, or that it saves Codex usage compared with working directly in Codex. Review the plan, commands, code changes, and results.
+MegaProg does not guarantee that a plan captures every requirement, that generated code is correct, or lower service usage than running tasks directly. Review the plan, commands, code changes, and results.
 
 ## Get started on macOS
 
@@ -37,20 +37,20 @@ The Preview package targets **Apple Silicon**. The app is ad-hoc signed; it has 
 1. Download `MegaProg-4.5.1-macos-arm64.zip` from [Releases](https://github.com/popovantondev/MegaProg/releases).
 2. Unzip it and move `MegaProg.app` to Applications.
 3. Open MegaProg. Click **Try the tutorial** to create a new tutorial project without using Terminal, or choose your existing Git project. Follow the **Project → Connection → Plan → Run → Result** steps and click **Check connection**.
-4. Sign in to Codex with a ChatGPT account that has Codex access. MegaProg removes API-key environment variables and requires ChatGPT login; it does not fall back to the paid API.
-5. Copy the ChatGPT instructions in MegaProg. ChatGPT cannot inspect your local project by itself, so attach relevant files or paste project details.
-6. Ask ChatGPT to propose the goal, acceptance criteria, files, checks, and model-turn budget. Review and approve that proposal in the chat; save the final answer as plain JSON.
+4. Connect and sign in to the supported execution service. Subscription login is required; API-key environment variables are removed and no separately billed API fallback is used.
+5. Prepare the project information needed for the plan. Review any files before sharing them with an external service.
+6. Specify the goal, acceptance criteria, files, checks, and execution budget. Review the plan and save it as plain JSON.
 7. Open that JSON in MegaProg. Review the features, allowed files, and every verification command. Opening the file does not run anything.
 8. Click **Approve and run**, or **Save without running**. Choose **One task, then pause** to stop between tasks. To resume, select the project and its saved plan, review it and confirm continuation.
 
 Verification commands are executable programs. They run on your Mac under your user account. Approve plans and commands only from sources you trust. Keep a Git backup and review code changes before using or publishing them.
 
-The **Try the tutorial** button creates a fresh Git project and opens the included two-function plan with a two-turn budget. It never overwrites an existing folder. Codex starts only after your explicit approval. The same [plan](examples/two-features/approved-plan.json) and [demo source](examples/two-features/project/README.md) are available in this repository.
+The **Try the tutorial** button creates a fresh Git project and opens the included two-function plan with a two-turn budget. It never overwrites an existing folder. Task execution starts only after your explicit approval. The same [plan](examples/two-features/approved-plan.json) and [demo source](examples/two-features/project/README.md) are available in this repository.
 
 ## Requirements
 
 - macOS on Apple Silicon for the Preview app. Other macOS versions have not been independently verified.
-- Codex CLI installed separately and signed in to a ChatGPT account with Codex access.
+- A separately installed execution connector with an active subscription login. See the technical setup in the approved-plan documentation.
 - A Git project. Plans and run data are stored in that project's `.ai-dev/` directory.
 
 Source and automated tests also work on Python 3.9 or later. Building the macOS app requires Python 3.12 and PySide6 and the pinned tools in `requirements-build.txt`.
@@ -68,9 +68,9 @@ The release builder requires a clean Git checkout. It writes the app, source, ch
 
 ## Privacy and limitations
 
-MegaProg runs locally. Project plans, state, verification logs, and Codex session references are stored in `.ai-dev/` inside the selected project. Review or remove them when appropriate. This repository does not contain your Codex login. Codex processes tasks using the account and workspace you sign in with. Handoffs can contain local paths and task summaries; review them before attaching them to another chat.
+MegaProg runs locally. Project plans, state, verification logs, and execution-session references are stored in `.ai-dev/` inside the selected project. Review or remove them when appropriate. This repository does not contain your service credentials. Execution uses the connected external service and the account and workspace you sign in with. Handoffs can contain local paths and task summaries; review them before attaching them to another chat.
 
-See [Contributing](CONTRIBUTING.md), [Security](SECURITY.md), and the [GPL-3.0-only license](LICENSE). MegaProg is an independent community project, not an OpenAI product.
+See [Contributing](CONTRIBUTING.md), [Security](SECURITY.md), and the [GPL-3.0-only license](LICENSE). MegaProg is an independent community project.
 
 ## Desktop appearance
 

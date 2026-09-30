@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "megaprog"
 dynamic = ["version"]
-description = "Desktop app for approved, verified Codex plans"
+description = "Desktop app for approved, verified development plans"
 requires-python = ">=3.9"
 dependencies = []
 
