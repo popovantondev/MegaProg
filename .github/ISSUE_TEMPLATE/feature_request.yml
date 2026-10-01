@@ -1,0 +1,9 @@
+name: Feature request / Vorschlag / Предложение
+description: Suggest a practical improvement.
+body:
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Use case and suggestion / Anwendungsfall und Vorschlag / Задача и предложение
+    validations:
+      required: true

@@ -1,0 +1,26 @@
+name: Bug report / Fehler melden / Сообщить об ошибке
+description: Report a reproducible problem without private data.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version / Версия
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: OS and hardware / Betriebssystem und Hardware / ОС и оборудование
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and result / Schritte und Ergebnis / Действия и результат
+    validations:
+      required: true
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Safe examples / Bereinigte Beispiele / Обезличенные примеры
+      description: Remove passwords, tokens, account data, private files and personal paths before sharing.

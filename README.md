@@ -1,8 +1,24 @@
 # MegaProg
 
-[User guide](https://popovantondev.github.io/MegaProg/Guide-en.html)
+<!-- public-release:start -->
+Run approved development tasks through Codex and preserve requirements, checks and project progress.
 
-**[Download for macOS](https://github.com/popovantondev/MegaProg/releases) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
+**macOS · Apple Silicon · Preview 4.5.1**
+
+**[Download](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)** · **[User guide](https://popovantondev.github.io/MegaProg/Guide-en.html)** · **[Report a problem](https://github.com/popovantondev/MegaProg/issues/new/choose)**
+
+**Requirements and limitations:** Install Codex CLI separately and sign in with a ChatGPT account with Codex access; requires a Git project. Not notarized by Apple.
+
+**First steps:** Extract MegaProg.app, check the connection and open the tutorial. Review the plan and commands before approving execution.
+
+**Application files:**
+
+- [`MegaProg-4.5.1-macos-arm64.zip`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-macos-arm64.zip)
+
+**Checksums:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
+<!-- public-release:end -->
+
+**[Download for macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
 
 **Apple Silicon · 4.5.1 Preview · GPL-3.0-only**
 
@@ -34,7 +50,7 @@ MegaProg does not guarantee that a plan captures every requirement, that generat
 
 The Preview package targets **Apple Silicon**. The app is ad-hoc signed; it has no Apple Developer ID signature and is not notarized. macOS may warn about an unidentified developer. Open it only after reviewing the source and checking the release checksum. If you choose to proceed, macOS offers a per-app **Open Anyway** action in System Settings → Privacy & Security after the first blocked launch. Do not disable Gatekeeper globally. [Apple's instructions](https://support.apple.com/en-us/102445).
 
-1. Download `MegaProg-4.5.1-macos-arm64.zip` from [Releases](https://github.com/popovantondev/MegaProg/releases).
+1. Download `MegaProg-4.5.1-macos-arm64.zip` from [Releases](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1).
 2. Unzip it and move `MegaProg.app` to Applications.
 3. Open MegaProg. Click **Try the tutorial** to create a new tutorial project without using Terminal, or choose your existing Git project. Follow the **Project → Connection → Plan → Run → Result** steps and click **Check connection**.
 4. Sign in to Codex with a ChatGPT account that has Codex access. MegaProg removes API-key environment variables and requires ChatGPT login; it does not fall back to the paid API.
