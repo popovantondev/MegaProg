@@ -1,0 +1,20 @@
+name: "Предложить улучшение · Русский"
+description: "Предложите улучшение программы."
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: "Не публикуйте пароли, токены, файлы сессий, личные пути и персональные данные. Используйте вымышленные примеры и обезличенные скриншоты."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Какую проблему оно решает?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Предлагаемое улучшение"
+      placeholder: "Опишите желаемое поведение и конкретный пример."
+    validations:
+      required: true

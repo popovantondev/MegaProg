@@ -1,45 +1,45 @@
-name: "Bug report · English"
-description: "Report a reproducible problem."
+name: "Fehler melden · Deutsch"
+description: "Beschreibe ein reproduzierbares Problem."
 title: "[Bug] "
 body:
   - type: markdown
     attributes:
-      value: "Do not include passwords, tokens, session files, private paths or personal data. Use synthetic examples and redact screenshots."
+      value: "Keine Passwörter, Tokens, Sitzungsdateien, privaten Pfade oder persönlichen Daten veröffentlichen. Verwende erfundene Beispiele und bereinigte Screenshots."
   - type: input
     id: version
     attributes:
-      label: "Application version"
+      label: "Programmversion"
       placeholder: "4.5.1"
     validations:
       required: true
   - type: input
     id: system
     attributes:
-      label: "Operating system and hardware"
+      label: "Betriebssystem und Hardware"
       placeholder: "macOS · Apple Silicon"
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: "Steps to reproduce"
+      label: "Schritte zum Nachstellen"
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: "Expected result"
+      label: "Erwartetes Ergebnis"
     validations:
       required: true
   - type: textarea
     id: actual
     attributes:
-      label: "Actual result"
+      label: "Tatsächliches Ergebnis"
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: "Sanitized error message or screenshot"
+      label: "Bereinigte Fehlermeldung oder Screenshot"
     validations:
       required: false

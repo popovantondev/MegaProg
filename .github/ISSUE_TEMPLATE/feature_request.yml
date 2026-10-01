@@ -1,9 +1,20 @@
-name: Feature request / Vorschlag / Предложение
-description: Suggest a practical improvement.
+name: "Feature request · English"
+description: "Suggest an improvement."
+title: "[Feature] "
 body:
-  - type: textarea
-    id: suggestion
+  - type: markdown
     attributes:
-      label: Use case and suggestion / Anwendungsfall und Vorschlag / Задача и предложение
+      value: "Do not include passwords, tokens, session files, private paths or personal data. Use synthetic examples and redact screenshots."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What problem would it solve?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Suggested improvement"
+      placeholder: "Describe the desired behavior and a concrete example."
     validations:
       required: true

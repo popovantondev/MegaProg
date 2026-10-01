@@ -1,0 +1,20 @@
+name: "Verbesserung vorschlagen · Deutsch"
+description: "Schlage eine Verbesserung vor."
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: "Keine Passwörter, Tokens, Sitzungsdateien, privaten Pfade oder persönlichen Daten veröffentlichen. Verwende erfundene Beispiele und bereinigte Screenshots."
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Welches Problem würde sie lösen?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Vorgeschlagene Verbesserung"
+      placeholder: "Beschreibe das gewünschte Verhalten mit einem konkreten Beispiel."
+    validations:
+      required: true
