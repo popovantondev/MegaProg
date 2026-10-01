@@ -35,4 +35,34 @@ class PublicDocsTests(unittest.TestCase):
         del self.data['description']['ru'];self.assertTrue(any('incomplete localization' in e for e in self.check()))
     def test_release_tag_destination(self):
         self.data.update(tag='v1.0',release_url='https://github.com/popovantondev/Example/releases/latest',status='release');self.assertTrue(any('URL/tag mismatch' in e for e in self.check()))
+class NetworkRetryTests(unittest.TestCase):
+    def test_transient_connection_error_is_retried(self):
+        import io
+        from unittest.mock import patch
+        with patch.object(docs.urllib.request, 'urlopen', side_effect=[ConnectionResetError('reset'), io.BytesIO(b'ok')]) as request, patch.object(docs.time, 'sleep'):
+            self.assertEqual(docs.fetch_bytes('https://example.invalid'), b'ok')
+            self.assertEqual(request.call_count, 2)
+
+    def test_not_found_is_not_retried(self):
+        from unittest.mock import patch
+        error=docs.urllib.error.HTTPError('https://example.invalid', 404, 'Not found', {}, None)
+        with patch.object(docs.urllib.request, 'urlopen', side_effect=error) as request, patch.object(docs.time, 'sleep'):
+            with self.assertRaises(docs.urllib.error.HTTPError):
+                docs.fetch_bytes('https://example.invalid')
+            self.assertEqual(request.call_count, 1)
+
+    def test_temporary_server_error_is_retried(self):
+        import io
+        from unittest.mock import patch
+        error=docs.urllib.error.HTTPError('https://example.invalid', 503, 'Unavailable', {}, None)
+        with patch.object(docs.urllib.request, 'urlopen', side_effect=[error, io.BytesIO(b'ok')]), patch.object(docs.time, 'sleep'):
+            self.assertEqual(docs.fetch_bytes('https://example.invalid'), b'ok')
+
+    def test_persistent_connection_error_still_fails(self):
+        from unittest.mock import patch
+        with patch.object(docs.urllib.request, 'urlopen', side_effect=ConnectionResetError('reset')) as request, patch.object(docs.time, 'sleep'):
+            with self.assertRaises(ConnectionResetError):
+                docs.fetch_bytes('https://example.invalid')
+            self.assertEqual(request.call_count, 3)
+
 if __name__=='__main__':unittest.main()

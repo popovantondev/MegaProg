@@ -2,7 +2,7 @@
 from pathlib import Path
 from html import escape, unescape
 from html.parser import HTMLParser
-import argparse, json, os, re, sys, urllib.request
+import argparse, http.client, json, os, re, sys, time, urllib.error, urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
 LABELS={
@@ -96,6 +96,21 @@ class Links(HTMLParser):
         a=dict(attrs)
         if tag=='a' and a.get('href'):self.links.append(a['href'])
         if tag=='img' and a.get('src'):self.images.append(a['src'])
+def fetch_bytes(request, attempts=3):
+    """Retry temporary transport errors; permanent HTTP errors still fail."""
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (408, 429, 500, 502, 503, 504) or attempt == attempts - 1:
+                raise
+        except (urllib.error.URLError, TimeoutError, ConnectionError,
+                http.client.IncompleteRead, http.client.RemoteDisconnected):
+            if attempt == attempts - 1:
+                raise
+        time.sleep(attempt + 1)
+
 def validate(d,files,online=False,published=False):
     errors=[]
     projects=d.get('projects',[d])
@@ -146,7 +161,7 @@ def validate(d,files,online=False,published=False):
             if not p['tag']:continue
             url='https://api.github.com/repos/popovantondev/'+p['repo']+'/releases/tags/'+p['tag']
             try:
-                with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=30) as response:r=json.load(response)
+                r=json.loads(fetch_bytes(urllib.request.Request(url,headers=headers)))
                 if r['draft'] or r['prerelease']!=(p['status']=='preview'):errors.append(p['repo']+': incorrect release status')
                 actual={a['name']:a for a in r['assets']}
                 for n in p['downloads']+p['checksums']:
@@ -157,7 +172,7 @@ def validate(d,files,online=False,published=False):
             for p in projects:
                 url='https://raw.githubusercontent.com/popovantondev/'+p['repo']+'/main/public-release.json'
                 try:
-                    with urllib.request.urlopen(url,timeout=30) as response:current=json.load(response)
+                    current=json.loads(fetch_bytes(url))
                     for field in ('version','platform','tag','status','downloads','help_url','feedback_url','description','requirements'):
                         if current[field]!=p[field]:errors.append(p['repo']+': catalog differs from project metadata: '+field)
                 except Exception as exc:errors.append(p['repo']+': catalog metadata check failed: '+str(exc))
@@ -166,7 +181,7 @@ def validate(d,files,online=False,published=False):
                 for l in LANGS:
                     url=p['help_url'].format(lang=l)
                     try:
-                        with urllib.request.urlopen(url,timeout=30) as response:body=response.read().decode('utf-8')
+                        body=fetch_bytes(url).decode('utf-8')
                         if '<html' not in body.lower() or f'lang="{l}"' not in body:errors.append(url+': not the intended localized HTML page')
                         if p['version'] not in body:errors.append(url+': published version mismatch')
                     except Exception as exc:errors.append(url+': '+str(exc))
@@ -178,7 +193,7 @@ def main():
         if 'projects' not in d:parser.error('--refresh-catalog applies only to the profile repository')
         refreshed=[]
         for p in d['projects']:
-            with urllib.request.urlopen('https://raw.githubusercontent.com/popovantondev/'+p['repo']+'/main/public-release.json',timeout=30) as response:refreshed.append(json.load(response))
+            refreshed.append(json.loads(fetch_bytes('https://raw.githubusercontent.com/popovantondev/'+p['repo']+'/main/public-release.json')))
         d['projects']=refreshed;(ROOT/'public-release.json').write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     files=generated(d)
     if args.write:
