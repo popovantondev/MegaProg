@@ -1,0 +1,78 @@
+{
+  "name": "MegaProg",
+  "version": "4.5.1",
+  "platform": "macOS · Apple Silicon",
+  "tag": "v4.5.1-preview.1",
+  "description": {
+    "ru": "Запускает согласованные задачи разработки через Codex и сохраняет требования, проверки и прогресс проекта.",
+    "de": "Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.",
+    "en": "Run approved development tasks through Codex and preserve requirements, checks and project progress."
+  },
+  "requirements": {
+    "ru": "Отдельно установите Codex CLI и войдите через аккаунт ChatGPT с доступом к Codex; нужен Git-проект. Приложение не нотарифицировано Apple.",
+    "de": "Codex CLI separat installieren und mit einem ChatGPT-Konto mit Codex-Zugang anmelden; Git-Projekt nötig. Keine Apple-Notarisierung.",
+    "en": "Install Codex CLI separately and sign in with a ChatGPT account with Codex access; requires a Git project. Not notarized by Apple."
+  },
+  "start": {
+    "ru": "Распакуйте MegaProg.app, проверьте подключение и откройте учебный пример. Просмотрите план и команды перед разрешением запуска.",
+    "de": "MegaProg.app entpacken, Verbindung prüfen und das Tutorial öffnen. Plan und Befehle vor der Ausführung prüfen.",
+    "en": "Extract MegaProg.app, check the connection and open the tutorial. Review the plan and commands before approving execution."
+  },
+  "schema_version": 1,
+  "repo": "MegaProg",
+  "source_url": "https://github.com/popovantondev/MegaProg",
+  "readmes": {
+    "en": [
+      "README.md"
+    ],
+    "de": [
+      "README.de.md"
+    ],
+    "ru": [
+      "README.ru.md"
+    ]
+  },
+  "guides": {
+    "ru": "Guide-ru.html",
+    "de": "Guide-de.html",
+    "en": "Guide-en.html"
+  },
+  "help_url": "https://popovantondev.github.io/MegaProg/Guide-{lang}.html",
+  "feedback_url": "https://github.com/popovantondev/MegaProg/issues/new/choose",
+  "status": "preview",
+  "release_url": "https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1",
+  "assets": [
+    {
+      "name": "MegaProg-4.5.1-macos-arm64.zip",
+      "size": 31952317,
+      "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-macos-arm64.zip"
+    },
+    {
+      "name": "MegaProg-4.5.1-source.zip",
+      "size": 2138749,
+      "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-source.zip"
+    },
+    {
+      "name": "MegaProg-4.5.1-third-party-source.zip",
+      "size": 74583208,
+      "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-third-party-source.zip"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 293,
+      "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt"
+    }
+  ],
+  "downloads": [
+    "MegaProg-4.5.1-macos-arm64.zip"
+  ],
+  "checksums": [
+    "SHA256SUMS.txt"
+  ],
+  "version_files": [
+    {
+      "path": "ai_dev/version.py",
+      "pattern": "__version__\\s*=\\s*\"([^\"]+)\""
+    }
+  ]
+}
