@@ -1,0 +1,45 @@
+name: "Сообщить об ошибке · Русский"
+description: "Опишите воспроизводимую проблему."
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Не публикуйте пароли, токены, файлы сессий, личные пути и персональные данные. Используйте вымышленные примеры и обезличенные скриншоты."
+  - type: input
+    id: version
+    attributes:
+      label: "Версия программы"
+      placeholder: "4.5.1"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: "Операционная система и оборудование"
+      placeholder: "macOS · Apple Silicon"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Как повторить проблему"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Ожидаемый результат"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Фактический результат"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Обезличенный текст ошибки или скриншот"
+    validations:
+      required: false
