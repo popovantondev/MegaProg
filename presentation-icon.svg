@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+<title id="title">MegaProg — connected tasks, verified results</title>
+<defs>
+ <linearGradient id="tile" x1="120" y1="80" x2="940" y2="1010" gradientUnits="userSpaceOnUse"><stop stop-color="#29444f"/><stop offset=".45" stop-color="#142b35"/><stop offset="1" stop-color="#0b1923"/></linearGradient>
+ <linearGradient id="rim" x1="200" y1="130" x2="820" y2="880" gradientUnits="userSpaceOnUse"><stop stop-color="#658c95" stop-opacity=".65"/><stop offset=".5" stop-color="#25434e"/><stop offset="1" stop-color="#4c7580" stop-opacity=".2"/></linearGradient>
+ <radialGradient id="mintNode" cx=".3" cy=".2" r=".95"><stop stop-color="#f0fff8"/><stop offset=".34" stop-color="#c5eee2"/><stop offset=".73" stop-color="#9ad8c9"/><stop offset="1" stop-color="#59aaa4"/></radialGradient>
+ <radialGradient id="tealNode" cx=".3" cy=".2" r=".95"><stop stop-color="#b0f4e0"/><stop offset=".34" stop-color="#66d4b8"/><stop offset=".73" stop-color="#35b69e"/><stop offset="1" stop-color="#248b82"/></radialGradient>
+ <linearGradient id="metal" x1="355" y1="330" x2="690" y2="704" gradientUnits="userSpaceOnUse"><stop stop-color="#f1fff8"/><stop offset=".4" stop-color="#bcded9"/><stop offset=".73" stop-color="#7daeb0"/><stop offset="1" stop-color="#d6f7eb"/></linearGradient>
+ <linearGradient id="check" x1="437" y1="463" x2="593" y2="583" gradientUnits="userSpaceOnUse"><stop stop-color="#e0fff0"/><stop offset="1" stop-color="#7cdebd"/></linearGradient>
+ <radialGradient id="well"><stop stop-color="#203f47"/><stop offset="1" stop-color="#112730"/></radialGradient>
+</defs>
+<!-- One centred macOS tile; no extra transparent border around the exported artwork. -->
+<rect x="96" y="106" width="832" height="832" rx="192" fill="#06131b" opacity=".20"/>
+<rect x="96" y="96" width="832" height="832" rx="192" fill="url(#tile)"/>
+<rect x="100" y="100" width="824" height="824" rx="188" fill="none" stroke="url(#rim)" stroke-width="3"/>
+<g stroke-linecap="round">
+ <path d="M300 312 724 736M724 312 300 736" stroke="#061a23" stroke-width="45" opacity=".7"/>
+ <path d="M300 300 724 724M724 300 300 724" stroke="#477b81" stroke-width="34"/>
+ <path d="M300 293 724 717M724 293 300 717" stroke="#8ddac6" stroke-width="6" opacity=".48"/>
+</g>
+<g fill="#061a23" opacity=".6"><circle cx="300" cy="312" r="74"/><circle cx="724" cy="312" r="90"/><circle cx="300" cy="736" r="90"/><circle cx="724" cy="736" r="74"/></g>
+<!-- Opposite nodes share a material and size; the teal diagonal is larger. -->
+<g fill="url(#mintNode)" stroke="#e1fff1" stroke-opacity=".4" stroke-width="2"><circle cx="300" cy="300" r="72"/><circle cx="724" cy="724" r="72"/></g>
+<g fill="url(#tealNode)" stroke="#9eeee0" stroke-opacity=".4" stroke-width="2"><circle cx="724" cy="300" r="88"/><circle cx="300" cy="724" r="88"/></g>
+<circle cx="512" cy="526" r="191" fill="#071b24" opacity=".65"/>
+<circle cx="512" cy="512" r="187" fill="url(#metal)"/>
+<circle cx="512" cy="512" r="147" fill="url(#well)" stroke="#07222c" stroke-width="3"/>
+<circle cx="512" cy="512" r="184" fill="none" stroke="#edfff7" stroke-width="2" opacity=".6"/>
+<path d="m435 523 57 57 107-126" fill="none" stroke="#07232b" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
+<path d="m435 512 57 57 107-126" fill="none" stroke="url(#check)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

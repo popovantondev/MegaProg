@@ -1,0 +1,32 @@
+{
+  "folder": ".",
+  "shots": {
+    "ru": "docs/screenshots/ru-plan.png",
+    "de": "docs/screenshots/de-plan.png",
+    "en": "docs/screenshots/en-plan.png"
+  },
+  "icon": "presentation-icon.svg",
+  "palette": {
+    "accent": "#6951a4",
+    "tint": "#f0edfa",
+    "hero": "#292344",
+    "hero-end": "#5b4c85"
+  },
+  "flow": {
+    "ru": [
+      "Составить план",
+      "Передать задачу Codex CLI",
+      "Проверить результат"
+    ],
+    "de": [
+      "Plan erstellen",
+      "Aufgabe an Codex CLI übergeben",
+      "Ergebnis prüfen"
+    ],
+    "en": [
+      "Prepare a plan",
+      "Pass the task to Codex CLI",
+      "Review the result"
+    ]
+  }
+}
