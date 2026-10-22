@@ -70,7 +70,7 @@ def main():
    nav+='<details><summary>'+t[2]+'</summary><ol>'+''.join('<li><a href="#'+html.escape(k)+'">'+html.escape(v)+'</a></li>' for k,v in headings)+'</ol></details>'
   nav+='</aside>'
   s=s.replace('</head>','<link rel="stylesheet" href="guide-polish.css?v=20261022"></head>',1)
-  s=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+'\n<!-- guide-polish:start -->'+nav+'<!-- guide-polish:end -->\n',s,count=1)
+  s=re.sub(r'(<body\b[^>]*>)\s*',lambda m:m[1]+'\n<!-- guide-polish:start -->'+nav+'<!-- guide-polish:end -->\n',s,count=1)
   s=full_images(s,t[3])
   path.write_text(s,encoding='utf-8')
   (path.parent/'guide-polish.css').write_text(CSS,encoding='utf-8')
