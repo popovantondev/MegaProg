@@ -27,7 +27,7 @@ def markdown(d,l):
     return START+'\n'+'\n'.join(out)+'\n'+END
 def html_summary(d,l):
     t=LABELS[l];e=escape
-    out=[f'<section class="topic release-summary" aria-label="{e(t["start"])}">',f'<p>{e(d["description"][l])}</p>',f'<p><strong>{e(d["platform"])} · {e(status(d,l))}</strong></p>','<p class="release-actions">'+' '.join(f'<a class="release-link" href="{e(url)}">{e(label)}</a>' for label,url in actions(d,l))+'</p>',f'<p><strong>{e(t["setup"])}:</strong> {e(d["requirements"][l])}</p>',f'<p><strong>{e(t["start"])}:</strong> {e(d["start"][l])}</p>']
+    out=[f'<section class="topic release-summary" aria-label="{e(t["start"])}">',f'<p>{e(d["description"][l])}</p>',f'<p><strong>{e(d["platform"])} · {e(status(d,l))}</strong></p>','<p class="release-actions">'+' '.join(f'<a class="release-link" href="{e(url)}">{e(label)}</a>' for label,url in actions(d,l) if url!=d['help_url'].format(lang=l))+'</p>',f'<p><strong>{e(t["setup"])}:</strong> {e(d["requirements"][l])}</p>',f'<p><strong>{e(t["start"])}:</strong> {e(d["start"][l])}</p>']
     if d['downloads']:
         assets={a['name']:a for a in d['assets']}
         out += [f'<h2>{e(t["files"])}</h2>','<ul>']+[f'<li><a href="{e(assets[name]["url"])}"><code>{e(name)}</code></a></li>' for name in d['downloads']]+['</ul>',f'<p><strong>{e(t["checksum"])}:</strong> '+' · '.join(f'<a href="{e(assets[n]["url"])}">{e(n)}</a>' for n in d['checksums'])+'</p>']
