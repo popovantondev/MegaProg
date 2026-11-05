@@ -12,7 +12,7 @@ git diff --check
 ```
 
 Tests must not call Codex, make paid API calls, or change files outside their
-temporary fixtures. A release candidate also needs a manual macOS smoke test;
+temporary fixtures. A release also needs a manual macOS smoke test;
 CI does not launch Codex or publish a release.
 
 ## Pull requests

@@ -6,9 +6,17 @@
     "en": "docs/screenshots/en-plan.png"
   },
   "icon": "presentation-icon.svg",
+  "stack": "Python · PySide6",
   "palette": {
     "accent": "#6951a4",
     "tint": "#f0edfa",
+    "hero": "#292344",
+    "hero-end": "#5b4c85"
+  },
+  "palette_dark": {
+    "accent": "#b9a6f2",
+    "accent-ink": "#1d1535",
+    "tint": "#2a2342",
     "hero": "#292344",
     "hero-end": "#5b4c85"
   },
@@ -28,5 +36,169 @@
       "Pass the task to Codex CLI",
       "Review the result"
     ]
+  },
+  "bento": {
+    "de": {
+      "inst_text": "Die Schritte aus „Erste Schritte auf macOS“ in der Anleitung.",
+      "term": [
+        [
+          "ps",
+          "1. ZIP aus GitHub Releases laden und entpacken"
+        ],
+        [
+          "ps",
+          "2. MegaProg.app in den Ordner „Programme“ verschieben"
+        ],
+        [
+          "dim",
+          "   Warnt macOS: Systemeinstellungen → Datenschutz & Sicherheit → Trotzdem öffnen"
+        ],
+        [
+          "ps",
+          "3. „Mit Beispiel ausprobieren“ wählen oder ein Git-Projekt öffnen, dann „Verbindung prüfen“"
+        ],
+        [
+          "ps",
+          "4. Bei Codex mit einem ChatGPT-Konto anmelden"
+        ],
+        [
+          "ok",
+          "5. Plan als JSON öffnen, prüfen und mit „Freigeben und starten“ ausführen"
+        ]
+      ],
+      "tile": {
+        "title": "Ihre Daten",
+        "text": "MegaProg läuft lokal. Pläne, Status und Prüfprotokolle liegen unter .ai-dev/ in Ihrem Projekt. Die Aufgaben verarbeitet Codex mit dem ChatGPT-Konto, bei dem Sie angemeldet sind; das Repository enthält keine Anmeldedaten.",
+        "chips": [
+          "Daten lokal in .ai-dev/",
+          "Codex mit ChatGPT-Konto"
+        ]
+      },
+      "features": [
+        "Anforderungen außerhalb des Chatverlaufs speichern",
+        "Codex-Aufgaben nacheinander ausführen",
+        "Gemeinsames Modellrundenlimit",
+        "Prüfungen aus dem Plan ausführen",
+        "Pausieren und Fortsetzen",
+        "Fortschritt, Nutzungsdaten, Stopp-Grund",
+        "Übungsprojekt „Mit Beispiel ausprobieren“",
+        "Oberfläche DE · RU · EN, hell und dunkel"
+      ],
+      "checks": [
+        "Automatische Tests auf GitHub Actions (macOS 14): 44 Testdateien",
+        "Prüfbericht mit 556 Tests und einem echten Codex-Lauf (docs/PREVIEW_VALIDATION_REPORT.md)",
+        "Prüfsummen (SHA256SUMS.txt) im Release",
+        "Version {v} mit Änderungsprotokoll (CHANGELOG)",
+        "Anleitung auf Deutsch, Englisch und Russisch"
+      ]
+    },
+    "en": {
+      "inst_text": "The steps from “Get started on macOS” in the guide.",
+      "term": [
+        [
+          "ps",
+          "1. Download the ZIP from GitHub Releases and unzip it"
+        ],
+        [
+          "ps",
+          "2. Move MegaProg.app to the Applications folder"
+        ],
+        [
+          "dim",
+          "   If macOS warns: System Settings → Privacy & Security → Open Anyway"
+        ],
+        [
+          "ps",
+          "3. Choose “Try the tutorial” or open a Git project, then “Check connection”"
+        ],
+        [
+          "ps",
+          "4. Sign in to Codex with a ChatGPT account"
+        ],
+        [
+          "ok",
+          "5. Open the plan as JSON, review it and run it with “Approve and run”"
+        ]
+      ],
+      "tile": {
+        "title": "Your data",
+        "text": "MegaProg runs locally. Plans, status and check logs are stored under .ai-dev/ in your project. Codex processes the tasks with the ChatGPT account you are signed in to; the repository contains no sign-in data.",
+        "chips": [
+          "Data local in .ai-dev/",
+          "Codex with a ChatGPT account"
+        ]
+      },
+      "features": [
+        "Save requirements outside the chat history",
+        "Run Codex tasks one after another",
+        "Shared model-turn limit",
+        "Run the checks from the plan",
+        "Pause and resume",
+        "Progress, usage data, stop reason",
+        "Tutorial project “Try the tutorial”",
+        "Interface DE · RU · EN, light and dark"
+      ],
+      "checks": [
+        "Automatic tests on GitHub Actions (macOS 14): 44 test files",
+        "Validation report with 556 tests and one real Codex run (docs/PREVIEW_VALIDATION_REPORT.md)",
+        "Checksums (SHA256SUMS.txt) in the release",
+        "Version {v} with changelog",
+        "Guide in German, English and Russian"
+      ]
+    },
+    "ru": {
+      "inst_text": "Шаги из раздела «Первый запуск на macOS» руководства.",
+      "term": [
+        [
+          "ps",
+          "1. Скачать ZIP из GitHub Releases и распаковать"
+        ],
+        [
+          "ps",
+          "2. Перенести MegaProg.app в папку «Программы»"
+        ],
+        [
+          "dim",
+          "   Если macOS предупреждает: Системные настройки → Конфиденциальность и безопасность → Всё равно открыть"
+        ],
+        [
+          "ps",
+          "3. Выбрать «Попробовать на примере» или открыть Git-проект, затем «Проверить подключение»"
+        ],
+        [
+          "ps",
+          "4. Войти в Codex с аккаунтом ChatGPT"
+        ],
+        [
+          "ok",
+          "5. Открыть план как JSON, проверить его и запустить кнопкой «Утвердить и выполнить»"
+        ]
+      ],
+      "tile": {
+        "title": "Ваши данные",
+        "text": "MegaProg работает локально. Планы, состояние и протоколы проверок лежат в .ai-dev/ вашего проекта. Задачи обрабатывает Codex с аккаунтом ChatGPT, в который вы вошли; в репозитории нет данных для входа.",
+        "chips": [
+          "Данные локально в .ai-dev/",
+          "Codex с аккаунтом ChatGPT"
+        ]
+      },
+      "features": [
+        "Требования вне истории чата",
+        "Задачи Codex по очереди",
+        "Общий лимит ходов модели",
+        "Проверки из плана",
+        "Пауза и продолжение",
+        "Прогресс, расход, причина остановки",
+        "Учебный проект «Попробовать на примере»",
+        "Интерфейс DE · RU · EN, светлый и тёмный"
+      ],
+      "checks": [
+        "Автоматические тесты в GitHub Actions (macOS 14): 44 файла тестов",
+        "Отчёт о проверке: 556 тестов и один настоящий прогон Codex (docs/PREVIEW_VALIDATION_REPORT.md)",
+        "Контрольные суммы (SHA256SUMS.txt) в релизе",
+        "Версия {v} и журнал изменений",
+        "Руководство на немецком, английском и русском"
+      ]
+    }
   }
 }

@@ -1,77 +1,77 @@
 # MegaProg
 
 <!-- public-release:start -->
-Run approved development tasks through Codex and preserve requirements, checks and project progress.
+Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.
 
-**macOS · Apple Silicon · Preview 4.5.1**
+**macOS · Apple Silicon · Vorabversion 4.5.1**
 
-**[Download](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)** · **[User guide](https://popovantondev.github.io/MegaProg/Guide-en.html)** · **[Report a problem](https://github.com/popovantondev/MegaProg/issues/new/choose)**
+**[Herunterladen](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)** · **[Anleitung](https://popovantondev.github.io/MegaProg/Guide-de.html)** · **[Fehler melden](https://github.com/popovantondev/MegaProg/issues/new/choose)**
 
-**Requirements and limitations:** Install Codex CLI separately and sign in with a ChatGPT account with Codex access; requires a Git project. Not notarized by Apple.
+**Voraussetzungen und Grenzen:** Codex CLI separat installieren und mit einem ChatGPT-Konto mit Codex-Zugang anmelden; Git-Projekt nötig. Keine Apple-Notarisierung.
 
-**First steps:** Extract MegaProg.app, check the connection and open the tutorial. Review the plan and commands before approving execution.
+**Erste Schritte:** MegaProg.app entpacken, Verbindung prüfen und das Tutorial öffnen. Plan und Befehle vor der Ausführung prüfen.
 
-**Application files:**
+**App-Dateien:**
 
 - [`MegaProg-4.5.1-macos-arm64.zip`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-macos-arm64.zip)
 
-**Checksums:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
+**Prüfsummen:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Download for macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
+**[Für macOS herunterladen](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)**
 
-**Apple Silicon · 4.5.1 Preview · GPL-3.0-only**
+**Apple Silicon · 4.5.1 Preview (Vorschauversion) · GPL-3.0-only**
 
-<p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Review a plan. Run it. Keep your progress.</strong></p>
+<p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Plan freigeben. Ausführen. Fortschritt behalten.</strong></p>
 
-MegaProg is a macOS desktop app that runs approved software plans through OpenAI Codex. It stores requirements and progress in your project, runs tasks one at a time, and performs the checks listed in the plan.
+MegaProg ist eine macOS-App, die freigegebene Entwicklungspläne mit OpenAI Codex ausführt. Sie speichert Anforderungen und Fortschritt im Projekt, bearbeitet Aufgaben nacheinander und führt die Prüfungen aus dem Plan aus.
 
-## Demo: two calculator functions
+## Demo: zwei Rechenfunktionen
 
-<a href="docs/screenshots/en-plan.png"><img src="docs/screenshots/en-plan.png" width="100%" alt="English plan review"></a>
+<a href="docs/screenshots/de-plan.png"><img src="docs/screenshots/de-plan.png" width="100%" alt="Planprüfung auf Deutsch"></a>
 
-<a href="docs/screenshots/en-result.png"><img src="docs/screenshots/en-result.png" width="100%" alt="English verified result"></a>
+<a href="docs/screenshots/de-result.png"><img src="docs/screenshots/de-result.png" width="100%" alt="Geprüftes Ergebnis auf Deutsch"></a>
 
-The screenshots show the tutorial plan and its completed state after two Codex worker turns. The display uses translated demo text and a placeholder project path; private project data and usage details are omitted. [German](README.de.md#demo-zwei-rechenfunktionen) and [Russian](README.ru.md#пример-две-функции-калькулятора) screenshots are available in their own guides.
+Die Bilder zeigen den Übungsplan und seinen Abschluss nach zwei echten Codex-Arbeitsrunden. Der Text wurde für die Anzeige übersetzt, der Projektpfad durch einen Platzhalter ersetzt und private Daten sowie Nutzungswerte entfernt. [Russische](README.ru.md#пример-две-функции-калькулятора) und [englische](README.en.md#demo-two-calculator-functions) Bilder stehen in den jeweiligen Anleitungen.
 
-**ChatGPT cannot see files on your Mac unless you attach them.** Discuss a goal in ChatGPT, provide relevant project details, review the proposed plan, and save the final JSON file. Open and approve it in MegaProg.
+**ChatGPT kann nicht auf Dateien auf Ihrem Mac zugreifen, solange Sie diese nicht anhängen.** Besprechen Sie das Ziel in ChatGPT, stellen Sie nötige Projektinformationen bereit, prüfen und bestätigen Sie den Plan und speichern Sie das endgültige JSON. Öffnen Sie es anschließend in MegaProg.
 
-## What it does
+## Was MegaProg macht
 
-- Keeps requirements and the task queue outside chat history.
-- Runs Codex tasks in order within a shared model-turn budget.
-- Runs plan-defined checks and saves their results.
-- Saves progress so work can be paused and continued later.
-- Shows progress, available usage data, and why a task stopped.
+- Speichert Anforderungen und Aufgaben außerhalb des Chatverlaufs.
+- Führt Codex-Aufgaben nacheinander innerhalb eines gemeinsamen Modellrundenlimits aus.
+- Führt die Prüfungen aus dem Plan aus und speichert deren Ergebnisse.
+- Speichert den Fortschritt zum Pausieren und Fortsetzen.
+- Zeigt Fortschritt, verfügbare Nutzungsdaten und den Grund für einen Stopp.
 
-MegaProg does not guarantee that a plan captures every requirement, that generated code is correct, or that it saves Codex usage compared with working directly in Codex. Review the plan, commands, code changes, and results.
+MegaProg garantiert weder, dass alle Anforderungen erfasst wurden, noch fehlerfreien Code oder einen geringeren Codex-Verbrauch als die direkte Arbeit mit Codex. Prüfen Sie Plan, Befehle, Änderungen und Ergebnisse.
 
-## Get started on macOS
+## Erste Schritte auf macOS
 
-The Preview package targets **Apple Silicon**. The app is ad-hoc signed; it has no Apple Developer ID signature and is not notarized. macOS may warn about an unidentified developer. Open it only after reviewing the source and checking the release checksum. If you choose to proceed, macOS offers a per-app **Open Anyway** action in System Settings → Privacy & Security after the first blocked launch. Do not disable Gatekeeper globally. [Apple's instructions](https://support.apple.com/en-us/102445).
+Das Preview-Paket ist für **Apple-Silicon-Macs** vorgesehen. Die App ist ad hoc signiert, hat aber keine Apple-Developer-ID-Signatur und ist nicht notariell beglaubigt. macOS kann vor einem unbekannten Entwickler warnen. Öffnen Sie die App nur, wenn Sie Quellcode und Prüfsumme des Releases geprüft haben. Wenn Sie fortfahren möchten, bietet macOS nach dem ersten blockierten Start unter „Systemeinstellungen“ → „Datenschutz & Sicherheit“ die Option **Trotzdem öffnen** für diese App an. Gatekeeper nicht global deaktivieren. [Anleitung von Apple](https://support.apple.com/en-us/102445).
 
-1. Download `MegaProg-4.5.1-macos-arm64.zip` from [Releases](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1).
-2. Unzip it and move `MegaProg.app` to Applications.
-3. Open MegaProg. Click **Try the tutorial** to create a new tutorial project without using Terminal, or choose your existing Git project. Follow the **Project → Connection → Plan → Run → Result** steps and click **Check connection**.
-4. Sign in to Codex with a ChatGPT account that has Codex access. MegaProg removes API-key environment variables and requires ChatGPT login; it does not fall back to the paid API.
-5. Copy the ChatGPT instructions in MegaProg. ChatGPT cannot inspect your local project by itself, so attach relevant files or paste project details.
-6. Ask ChatGPT to propose the goal, acceptance criteria, files, checks, and model-turn budget. Review and approve that proposal in the chat; save the final answer as plain JSON.
-7. Open that JSON in MegaProg. Review the features, allowed files, and every verification command. Opening the file does not run anything.
-8. Click **Approve and run**, or **Save without running**. Choose **One task, then pause** to stop between tasks. To resume, select the project and its saved plan, review it and confirm continuation.
+1. Laden Sie `MegaProg-4.5.1-macos-arm64.zip` aus den [Releases](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) herunter.
+2. Entpacken Sie das Archiv und verschieben Sie `MegaProg.app` in den Ordner „Programme“.
+3. Öffnen Sie MegaProg. Mit „Mit Beispiel ausprobieren“ erstellen Sie ohne Terminal ein neues Übungsprojekt; alternativ wählen Sie ein bestehendes Git-Projekt. Klicken Sie dann auf „Verbindung prüfen“.
+4. Melden Sie sich bei Codex mit einem ChatGPT-Konto an, das Codex-Zugriff hat. MegaProg entfernt API-Key-Umgebungsvariablen, verlangt die ChatGPT-Anmeldung und wechselt nicht zur kostenpflichtigen API.
+5. Kopieren Sie die ChatGPT-Anleitung in MegaProg. Ein normaler Chat kann lokale Dateien nicht selbst ansehen: Hängen Sie passende Dateien an oder fügen Sie Projektdetails ein.
+6. Bitten Sie ChatGPT, Ziel, Abnahmekriterien, Dateien, Prüfungen und Modellrundenbudget vorzuschlagen. Prüfen und bestätigen Sie diesen Vorschlag zuerst im Chat. Speichern Sie die endgültige Antwort als reines JSON.
+7. Öffnen Sie die JSON-Datei in MegaProg. Prüfen Sie Funktionen, erlaubte Dateien und jeden Prüfungsbefehl. Das Öffnen startet nichts.
+8. Klicken Sie auf „Freigeben und starten“ oder „Nur speichern“. Mit „Eine Aufgabe, dann Pause“ pausieren Sie zwischen Aufgaben. Zum Fortsetzen öffnen Sie MegaProg erneut und wählen den gespeicherten Plan.
 
-Verification commands are executable programs. They run on your Mac under your user account. Approve plans and commands only from sources you trust. Keep a Git backup and review code changes before using or publishing them.
+Prüfungsbefehle sind ausführbare Programme. Sie laufen auf Ihrem Mac mit Ihrem Benutzerkonto. Geben Sie nur Pläne und Befehle aus Quellen frei, denen Sie vertrauen. Erstellen Sie ein Git-Backup und prüfen Sie Änderungen, bevor Sie sie verwenden oder veröffentlichen.
 
-The **Try the tutorial** button creates a fresh Git project and opens the included two-function plan with a two-turn budget. It never overwrites an existing folder. Codex starts only after your explicit approval. The same [plan](examples/two-features/approved-plan.json) and [demo source](examples/two-features/project/README.md) are available in this repository.
+„Mit Beispiel ausprobieren“ erstellt einen neuen Git-Projektordner und öffnet den enthaltenen Plan für zwei Funktionen mit einem Limit von zwei Modellrunden. Bestehende Ordner werden nicht überschrieben. Codex startet erst nach Ihrer Freigabe. [Plan](examples/two-features/approved-plan.json) und [Beispielquellen](examples/two-features/project/README.md) liegen auch im Repository.
 
-## Requirements
+## Voraussetzungen
 
-- macOS on Apple Silicon for the Preview app. Other macOS versions have not been independently verified.
-- Codex CLI installed separately and signed in to a ChatGPT account with Codex access.
-- A Git project. Plans and run data are stored in that project's `.ai-dev/` directory.
+- macOS auf Apple Silicon für das Preview-Paket. Andere macOS-Versionen wurden noch nicht unabhängig geprüft.
+- Eine separate Installation der Codex CLI mit ChatGPT-Anmeldung und Codex-Zugriff.
+- Ein Git-Projekt. Pläne und Laufdaten werden in `.ai-dev/` im Projekt gespeichert.
 
-Source and automated tests also work on Python 3.9 or later. Building the macOS app requires Python 3.12 and PySide6 and the pinned tools in `requirements-build.txt`.
+Quellcode und Tests laufen außerdem mit Python 3.9 oder neuer. Für den App-Build benötigen Sie Python 3.12 mit PySide6 sowie die Werkzeuge aus `requirements-build.txt`.
 
-## Build from source
+## Aus dem Quellcode bauen
 
 ```sh
 python3.12 -m venv .venv
@@ -80,14 +80,14 @@ python -m pip install -r requirements-build.txt
 python packaging/build.py --output /tmp/megaprog-release
 ```
 
-The release builder requires a clean Git checkout. It writes the app, source, checksums, and ZIP under the selected output directory. See [Build and release](docs/RELEASE.md).
+Der Build erfordert einen sauberen Git-Checkout und speichert App, Quellcode, Prüfsummen und ZIP im gewählten Ordner. Siehe [Build und Release](docs/RELEASE.md).
 
-## Privacy and limitations
+## Datenschutz und Grenzen
 
-MegaProg runs locally. Project plans, state, verification logs, and Codex session references are stored in `.ai-dev/` inside the selected project. Review or remove them when appropriate. This repository does not contain your Codex login. Codex processes tasks using the account and workspace you sign in with. Handoffs can contain local paths and task summaries; review them before attaching them to another chat.
+MegaProg läuft lokal. Pläne, Status, Prüfprotokolle und Codex-Sitzungsreferenzen liegen unter `.ai-dev/` im ausgewählten Projekt. Prüfen oder löschen Sie diese Daten bei Bedarf. Dieses Repository enthält keine Codex-Anmeldedaten. Codex verarbeitet Aufgaben mit dem Konto und Workspace, bei dem Sie angemeldet sind. Ein Handoff kann lokale Pfade und Aufgabenbeschreibungen enthalten: Prüfen Sie ihn vor dem Anhängen an einen anderen Chat.
 
-See [Contributing](CONTRIBUTING.md), [Security](SECURITY.md), and the [GPL-3.0-only license](LICENSE). MegaProg is an independent community project, not an OpenAI product.
+Informationen zur Mitarbeit: [CONTRIBUTING.md](CONTRIBUTING.md). Sicherheit: [SECURITY.md](SECURITY.md). Lizenz: [GPL-3.0-only](LICENSE). MegaProg ist ein unabhängiges Community-Projekt und kein OpenAI-Produkt.
 
-## Desktop appearance
+## Neuer Assistent
 
-System, light and dark themes; complete English, German and Russian interface. Preferences and recent projects stay local. The new centred node/check icon is shared by the app and documentation. From source, install the desktop extra with `python -m pip install ".[gui]"`.
+Projekt → Verbindung → Plan → Ausführung → Ergebnis. Nach der Prüfung wählen Sie „Freigeben und starten“ oder „Nur speichern“. Gespeicherte Pläne wählen Sie im ersten Schritt ausdrücklich aus. Die Oberfläche gibt es im System-Design sowie hell und dunkel, vollständig auf Deutsch, Russisch und Englisch. Das Chat-Paket hängen Sie manuell in ChatGPT an. Aus Quellcode: `python -m pip install ".[gui]"`.

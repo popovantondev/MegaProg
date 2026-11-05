@@ -52,7 +52,7 @@ class PackagingTests(unittest.TestCase):
             with zipfile.ZipFile(first) as archive:
                 names = archive.namelist()
                 self.assertTrue(any(n.endswith('/README.ru.md') for n in names))
-                self.assertTrue(any(n.endswith('/README.de.md') for n in names))
+                self.assertTrue(any(n.endswith('/README.en.md') for n in names))
                 self.assertTrue(any(n.endswith('/LICENSE') for n in names))
                 self.assertTrue(any(n.endswith('/assets/megaprog.icns') for n in names))
                 for required in ('ai_dev/gui_window.py','ai_dev/native_monitor_windows.cmd','mcp_host/verify.mjs','mcp_host/megaprog-mcp-host.mjs'):

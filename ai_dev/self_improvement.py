@@ -17,7 +17,7 @@ CANONICAL_GOAL = (
     "verify results, and improve only through the verified canonical MegaProg repository"
 )
 POLICY_HEADING = "Self-improvement policy"
-POLICY_FILES = ("CONTRIBUTING.md", "README.md", "ДЛЯ_ДРУГОГО_ЧАТА.txt")
+POLICY_FILES = ("CONTRIBUTING.md", "README.md", "PROMPT_FOR_ANOTHER_CHAT.txt")
 FORBIDDEN_PREFIXES = (".ai-dev/", ".git/")
 FORBIDDEN_NAMES = {"state", "state.json", "resume", "resume.json", "lessons.json"}
 

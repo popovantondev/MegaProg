@@ -1,6 +1,6 @@
 # MegaProg 4.5.1 Preview — validation
 
-## Final release candidate, 2026-09-27
+## Release 4.5.1 Preview, 2026-09-27
 
 - Final offline suite: 556 tests run, 553 passed, 3 skipped. The public source snapshot and its packaged app passed source release-check, strict macOS signature verification, CLI help and window startup with a fresh `HOME` in the current user account.
 - A 4.5.1 app build with the same runtime code was used for a real tutorial run: both calculator functions reached `VERIFIED`; both tasks reached `COMPLETED` after one attempt each. The saved plan reports 2/2 worker turns. The first task remained complete when work continued after the pause. The final release archive was rebuilt after documentation and test-only changes; it did not run additional model turns.

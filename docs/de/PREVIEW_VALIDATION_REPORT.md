@@ -1,6 +1,6 @@
 # MegaProg 4.5.1 Preview — Prüfung
 
-## Finaler Kandidat, 27. September 2026
+## Release 4.5.1 Preview, 27. September 2026
 
 - Abschließende Offline-Suite: 556 Tests, 553 bestanden, 3 übersprungen. Der öffentliche Quellstand und die gepackte App bestanden den Source-Release-Check, die strenge macOS-Signaturprüfung, die CLI-Prüfung und den Fensterstart mit leerem `HOME` im aktuellen Benutzerkonto.
 - Ein 4.5.1-Build mit demselben Anwendungscode führte das echte Übungsprojekt aus: Beide Rechenfunktionen erhielten `VERIFIED`, beide Aufgaben `COMPLETED` nach je einem Versuch. Der gespeicherte Plan zeigt 2/2 Arbeitsrunden. Nach der Pause wurde die erste Aufgabe nicht wiederholt. Das endgültige Archiv wurde nach Änderungen nur an Dokumentation und Test neu gebaut; weitere Modellrunden wurden nicht gestartet.
@@ -36,13 +36,13 @@ Vorschau: `QT_QPA_PLATFORM=offscreen python packaging/preview_gui.py --output /t
 - Gegenüberliegende Symbolknoten stimmen überein: kleinere mintfarbene und größere türkise Knoten.
 - Russische Ordnerfehlermeldung im hellen Design bei 860×620 visuell geprüft. Die obigen 84 Aufnahmen stammen aus 4.5.0.
 - Ein Übungsplan mit zwei Funktionen und einem Budget von zwei Runden wurde vorbereitet. Vorbereitung und lokale Verbindungsprüfung starten keine Modellaufgaben.
-- Auf dem korrigierten 4.5.1-Kandidaten (`89c2eb3`) wurde ein separater echter Codex-Lauf durchgeführt: Beide Übungsfunktionen wurden in genau zwei Worker-Runden abgeschlossen. Nach der ersten Aufgabe wurde die App angehalten, geschlossen und wieder geöffnet; beim Fortsetzen desselben Plans wurde die erste Aufgabe nicht wiederholt. Die Prüfungen beider Funktionen bestanden. Codex meldete 115.371 Eingabetoken (davon 106.496 aus dem Cache) und 594 Ausgabetoken; Laufzeit 1.559,497 Sekunden. Diese Werte beschreiben nur diesen Lauf und keinen Vergleich mit direkter Codex-Nutzung.
+- Auf dem korrigierten 4.5.1-Build (`89c2eb3`) wurde ein separater echter Codex-Lauf durchgeführt: Beide Übungsfunktionen wurden in genau zwei Worker-Runden abgeschlossen. Nach der ersten Aufgabe wurde die App angehalten, geschlossen und wieder geöffnet; beim Fortsetzen desselben Plans wurde die erste Aufgabe nicht wiederholt. Die Prüfungen beider Funktionen bestanden. Codex meldete 115.371 Eingabetoken (davon 106.496 aus dem Cache) und 594 Ausgabetoken; Laufzeit 1.559,497 Sekunden. Diese Werte beschreiben nur diesen Lauf und keinen Vergleich mit direkter Codex-Nutzung.
 
 ## Paketabnahme
 
 Build, Signatur, Prüfsummen, Quellmanifest und Cocoa-Oberfläche des genauen
-Pakets werden im separaten Kandidatenbericht festgehalten. Einheitstests
-oder der echte Lauf auf dem korrigierten Kandidaten belegen diese Schritte
+Pakets werden im separaten Paketbericht festgehalten. Einheitstests
+oder der echte Lauf auf dem korrigierten Build belegen diese Schritte
 nicht automatisch.
 
 Ein separates frisches macOS-Konto, ein zweiter Mac,

@@ -23,4 +23,4 @@ Eine Funktion gilt erst mit Verweisen auf Quellcode und Prüfergebnisse als fert
 
 ## Ergänzung 4.5.1
 
-Offline geprüft: konkrete Ordnerdiagnose mit sichtbarem Pfad; eine ungültige Auswahl verwirft den vorherigen geprüften Plan. Symbolknoten sind diagonal nach Farbe und Größe gepaart. Beispielprüfungen erzeugen keinen Bytecode. Paketnachweise stehen beim Kandidaten.
+Offline geprüft: konkrete Ordnerdiagnose mit sichtbarem Pfad; eine ungültige Auswahl verwirft den vorherigen geprüften Plan. Symbolknoten sind diagonal nach Farbe und Größe gepaart. Beispielprüfungen erzeugen keinen Bytecode. Paketnachweise stehen beim Paket.

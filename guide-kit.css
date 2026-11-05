@@ -1,0 +1,35 @@
+/* Guide pages: the shared kit supplies tokens, header and footer; this file maps the older guide palette onto them. */
+:root{--ink:var(--ppk-ink);--muted:var(--ppk-muted);--line:var(--ppk-line);--blue:var(--ppk-accent);--panel:var(--ppk-panel);--canvas:var(--ppk-bg)}
+body.ppk-page{overflow-wrap:anywhere}
+.ppk-page .shell a{color:var(--ppk-accent)}
+.ppk-page .shell a:hover{color:var(--ppk-ink)}
+.ppk-page .shell a.button,.ppk-page .shell a.button:hover{color:#0c315e}
+.ppk-page .shell a.release-link{border-color:var(--ppk-line);background:var(--ppk-tint);color:var(--ppk-accent)}
+.ppk-page .shell a.release-link:hover{color:var(--ppk-ink)}
+.ppk-page .topic th{background:var(--ppk-tint)}
+.ppk-page .topic code{background:var(--ppk-tint)}
+.ppk-page .topic pre code{background:none}
+.ppk-page .topic blockquote{border-left-color:var(--ppk-accent)}
+.ppk-page figure{border-color:var(--ppk-line);background:var(--ppk-panel)}
+.ppk-page .overview,.ppk-page .topic{box-shadow:none}
+.ppk-page .guide-note{margin:24px 0 0;color:var(--ppk-muted);font-size:14px}
+.ppk-page .shell img{max-width:100%;height:auto}
+.ppk-page .shell pre{max-width:100%;overflow:auto}
+.ppk-page .shell table{display:block;max-width:100%;overflow-x:auto}
+.ppk-page .shell h1,.ppk-page .shell h2,.ppk-page .shell h3,.ppk-page .shell p,.ppk-page .shell li{overflow-wrap:anywhere}
+.guide-tools{box-sizing:border-box;margin:0 0 16px;padding:6px 18px;border:1px solid var(--ppk-line);border-radius:14px;background:var(--ppk-panel);color:var(--ppk-ink);font:14px/1.6 var(--ppk-font)}
+.guide-tools summary{cursor:pointer;min-height:44px;display:list-item;line-height:44px;font-weight:650}
+.guide-tools ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:4px 0 12px;padding-left:22px}
+.guide-tools li{min-width:0;overflow-wrap:anywhere}
+.guide-full-image{display:block;max-width:100%;text-align:center}.guide-full-image img{object-fit:contain}
+.ppk-page a:focus-visible,.ppk-page button:focus-visible,.ppk-page summary:focus-visible{outline:3px solid var(--ppk-focus);outline-offset:4px}
+/* The guides' own `nav` rules must not restyle the kit header and footer. */
+.ppk-nav-wrap .ppk-brand,.ppk-nav-wrap .ppk-back{padding:0;border:0;border-radius:0;background:none}
+.ppk-nav-wrap .ppk-langs a{padding:0;border:0;background:transparent}
+.ppk-nav-wrap .ppk-langs a:hover{background:var(--ppk-bg)}
+.ppk-nav-wrap .ppk-langs a[aria-current]{background:var(--ppk-tint)}
+.ppk-nav-wrap .ppk-nav{flex-wrap:nowrap}
+.ppk-footer nav a{padding:0;border:0;border-radius:0;background:none;font-size:inherit}
+@media(max-width:760px){.guide-tools ol{grid-template-columns:1fr}.ppk-page .shell{width:min(100% - 32px,1000px)}body .hero figure{display:block!important}}
+@media(max-width:520px){.ppk-nav-wrap .ppk-nav{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation:none!important;transition:none!important}}

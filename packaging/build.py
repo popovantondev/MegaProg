@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT))
 from ai_dev.version import __version__ as VERSION
 
 ROOT_FILES = ('.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
-              'README.ru.md', 'README.de.md', 'ДЛЯ_ДРУГОГО_ЧАТА.txt', 'SECURITY.md',
+              'README.ru.md', 'README.en.md', 'PROMPT_FOR_ANOTHER_CHAT.txt', 'SECURITY.md',
               'SECURITY.ru.md', 'SECURITY.de.md', 'CHANGELOG.md', '.github/workflows/tests.yml',
               'THIRD_PARTY_NOTICES.md', 'pyproject.toml', 'requirements-build.txt', 'ai-dev', 'ai-dev.cmd', 'package.json', 'package-lock.json', 'launch_gui.py',
               'mcp_host/megaprog-mcp-host.mjs', 'mcp_host/verify.mjs')

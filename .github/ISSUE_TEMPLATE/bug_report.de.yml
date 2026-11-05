@@ -1,10 +1,10 @@
 name: "Fehler melden · Deutsch"
-description: "Beschreibe ein reproduzierbares Problem."
+description: "Beschreiben Sie ein reproduzierbares Problem."
 title: "[Bug] "
 body:
   - type: markdown
     attributes:
-      value: "Keine Passwörter, Tokens, Sitzungsdateien, privaten Pfade oder persönlichen Daten veröffentlichen. Verwende erfundene Beispiele und bereinigte Screenshots."
+      value: "Keine Passwörter, Tokens, Sitzungsdateien, privaten Pfade oder persönlichen Daten veröffentlichen. Verwenden Sie erfundene Beispiele und bereinigte Screenshots."
   - type: input
     id: version
     attributes:

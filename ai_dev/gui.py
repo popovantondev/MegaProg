@@ -356,7 +356,7 @@ class App:
             self.status.set('Останавливаю выполнение и сохраняю состояние…')
 
     def copy_instruction(self):
-        path = BASE / 'ДЛЯ_ДРУГОГО_ЧАТА.txt'
+        path = BASE / 'PROMPT_FOR_ANOTHER_CHAT.txt'
         text = path.read_text(encoding='utf-8')
         self.root.clipboard_clear()
         self.root.clipboard_append(text)

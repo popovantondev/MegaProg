@@ -11,7 +11,7 @@ from .version import __version__ as CURRENT_VERSION
 
 REQUIRED_FILES = (
     '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
-    'README.ru.md', 'README.de.md', 'ДЛЯ_ДРУГОГО_ЧАТА.txt', 'SECURITY.md',
+    'README.ru.md', 'README.en.md', 'PROMPT_FOR_ANOTHER_CHAT.txt', 'SECURITY.md',
     'SECURITY.ru.md', 'SECURITY.de.md', 'CHANGELOG.md', '.github/workflows/tests.yml',
     'THIRD_PARTY_NOTICES.md', 'pyproject.toml',
     'licenses/CPython-3.12.14-LICENSE.txt',
@@ -43,9 +43,9 @@ REQUIRED_FILES = (
 EXECUTABLE_FILES = ('ai-dev',)
 REQUIRED_TEXT = {
     'LICENSE': ('GNU GENERAL PUBLIC LICENSE', 'Version 3'),
-    'README.md': ('Preview', 'GPL-3.0-only', 'README.ru.md', 'README.de.md'),
+    'README.md': ('Vorschau', 'GPL-3.0-only', 'README.ru.md', 'README.en.md'),
     'README.ru.md': ('Предварительная версия', 'GPL-3.0-only'),
-    'README.de.md': ('Vorschau', 'GPL-3.0-only'),
+    'README.en.md': ('Preview', 'GPL-3.0-only', 'README.ru.md', 'README.md'),
     'docs/APPROVED_PLAN_MODE.md': ('schema_version', 'max_model_turns'),
     'THIRD_PARTY_NOTICES.md': ('MegaProg-4.5.1-third-party-source.zip',),
 }

@@ -18,7 +18,7 @@
 **Контрольные суммы:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Скачать для macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
+**[Скачать для macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)**
 
 **Apple Silicon · 4.5.1 Preview (Предварительная версия) · GPL-3.0-only**
 
@@ -32,7 +32,7 @@ MegaProg — приложение для macOS, которое выполняе�
 
 <a href="docs/screenshots/ru-result.png"><img src="docs/screenshots/ru-result.png" width="100%" alt="Проверенный результат на русском"></a>
 
-Снимки показывают учебный план и состояние после двух настоящих ходов Codex. Текст плана для показа переведён; путь проекта заменён условным, личные данные и показатели расхода убраны. Скриншоты [на немецком](README.de.md#demo-zwei-rechenfunktionen) и [английском](README.md#demo-two-calculator-functions) находятся в соответствующих инструкциях.
+Снимки показывают учебный план и состояние после двух настоящих ходов Codex. Текст плана для показа переведён; путь проекта заменён условным, личные данные и показатели расхода убраны. Скриншоты [на немецком](README.md#demo-zwei-rechenfunktionen) и [английском](README.en.md#demo-two-calculator-functions) находятся в соответствующих инструкциях.
 
 **ChatGPT не видит файлы на вашем Mac, пока вы их не прикрепите.** Обсудите цель в ChatGPT, предоставьте нужные сведения о проекте, проверьте предложение, утвердите план и сохраните итоговый JSON. Затем откройте его в MegaProg.
 

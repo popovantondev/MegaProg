@@ -1,12 +1,12 @@
 # MegaProg 4.5.1 Preview — release page draft
 
-**[English](../README.md) · [Русский](../README.ru.md) · [Deutsch](../README.de.md)**
+**[English](../README.en.md) · [Русский](../README.ru.md) · [Deutsch](../README.md)**
 
 MegaProg helps you run a plan that you reviewed and approved in ChatGPT. It keeps the feature requirements and task queue in your project, runs Codex tasks sequentially, performs the listed checks, and saves progress so you can continue later.
 
 ![English tutorial result](screenshots/en-result.png)
 
-The demonstration shows two verified calculator functions after two worker turns. [Plan and result screenshots in all three languages](../README.md#demo-two-calculator-functions).
+The demonstration shows two verified calculator functions after two worker turns. [Plan and result screenshots in all three languages](../README.en.md#demo-two-calculator-functions).
 
 ## Quick start
 
@@ -98,7 +98,7 @@ MegaProg führt einen Plan aus, den Sie in ChatGPT geprüft und freigegeben habe
 
 ![Ergebnis des Übungsplans](screenshots/de-result.png)
 
-[Plan- und Ergebnisbilder in drei Sprachen](../README.de.md#demo-zwei-rechenfunktionen).
+[Plan- und Ergebnisbilder in drei Sprachen](../README.md#demo-zwei-rechenfunktionen).
 
 ## Downloads
 
