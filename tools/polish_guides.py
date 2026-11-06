@@ -1,6 +1,7 @@
 """Idempotent shared-kit chrome (header, theme, footer) and responsive polish for existing HTML guides."""
 from pathlib import Path
 from html.parser import HTMLParser
+import hashlib
 import html
 import json
 import re
@@ -48,6 +49,29 @@ body.ppk-page{overflow-wrap:anywhere}
 @media(max-width:520px){.ppk-nav-wrap .ppk-nav{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation:none!important;transition:none!important}}
 '''
+
+
+HOME_START = '<!-- ppk-guide-home:start -->'
+HOME_END = '<!-- ppk-guide-home:end -->'
+HOME_LABEL = {'ru': '← На страницу программы', 'de': '← Zur Programmseite', 'en': '← Program page'}
+HOME_PAGE = {'de': 'index.html', 'en': 'index-en.html', 'ru': 'index-ru.html'}
+HOME_CSS = '''.guide-home{margin:0 0 20px}
+body.ppk-page a.guide-home-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border:1px solid var(--ppk-accent);border-radius:999px;background:var(--ppk-tint);color:var(--ppk-accent);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none}
+body.ppk-page a.guide-home-link:hover{background:var(--ppk-accent);color:var(--ppk-accent-ink,#fff)}
+'''
+
+
+def home_link(s, lang):
+    """Visible link from the top of the guide to the landing page of this program in the same language."""
+    s = re.sub(re.escape(HOME_START) + '.*?' + re.escape(HOME_END) + r'\s*', '', s, flags=re.S)
+    block = HOME_START + '<p class="guide-home"><a class="guide-home-link" href="' + HOME_PAGE[lang] + '">' + HOME_LABEL[lang] + '</a></p>' + HOME_END + '\n'
+    return re.sub(r'(<main\b[^>]*>)\s*', lambda m: m.group(1) + '\n' + block, s, count=1)
+
+
+def css_rev(text):
+    return hashlib.md5(text.encode('utf-8')).hexdigest()[:8]
+
+CSS += HOME_CSS
 
 
 def full_images(source, label):
@@ -149,12 +173,13 @@ def main():
         head = (HEAD_START + '<meta name="color-scheme" content="light dark">'
                 + ('' if re.search(r'<link rel="icon"', s) else f'<link rel="icon" href="{e(icon)}">')
                 + ('' if re.search(r'<meta name="description"', s) else f'<meta name="description" content="{e(d["description"][lang])}">')
-                + head_assets(cfg) + f'<link rel="stylesheet" href="guide-kit.css?v={v}">' + HEAD_END)
+                + head_assets(cfg) + f'<link rel="stylesheet" href="guide-kit.css?v={v}-{css_rev(CSS)}">' + HEAD_END)
         s = s.replace('</head>', head + '</head>', 1)
         # Body: class, skip link, kit header.
         nav = (BODY_START + f'<a class="ppk-skip" href="#main-content">{e(t["skip"])}</a>\n' + nav_html(cfg, d, lang, 'guide') + BODY_END + '\n')
         s = re.sub(r'<body\b([^>]*)>\s*', lambda m: _body(m, nav), s, count=1)
         s = re.sub(r'<main(?![^>]*\bid=)', '<main id="main-content"', s, count=1)
+        s = home_link(s, lang)
         if toc:
             s = s.replace('<main', toc + '<main', 1)
         # Kit footer after the page container.

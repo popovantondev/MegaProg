@@ -33,3 +33,6 @@ body.ppk-page{overflow-wrap:anywhere}
 @media(max-width:760px){.guide-tools ol{grid-template-columns:1fr}.ppk-page .shell{width:min(100% - 32px,1000px)}body .hero figure{display:block!important}}
 @media(max-width:520px){.ppk-nav-wrap .ppk-nav{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation:none!important;transition:none!important}}
+.guide-home{margin:0 0 20px}
+body.ppk-page a.guide-home-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border:1px solid var(--ppk-accent);border-radius:999px;background:var(--ppk-tint);color:var(--ppk-accent);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none}
+body.ppk-page a.guide-home-link:hover{background:var(--ppk-accent);color:var(--ppk-accent-ink,#fff)}

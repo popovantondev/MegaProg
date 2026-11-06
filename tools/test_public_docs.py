@@ -35,6 +35,18 @@ class PublicDocsTests(unittest.TestCase):
         del self.data['description']['ru'];self.assertTrue(any('incomplete localization' in e for e in self.check()))
     def test_release_tag_destination(self):
         self.data.update(tag='v1.0',release_url='https://github.com/popovantondev/Example/releases/latest',status='release');self.assertTrue(any('URL/tag mismatch' in e for e in self.check()))
+    def test_guides_link_to_landing(self):
+        root=Path(__file__).resolve().parents[1];labels={'ru':'← На страницу программы','de':'← Zur Programmseite','en':'← Program page'};pages={'de':'index.html','en':'index-en.html','ru':'index-ru.html'};found=0
+        for folder in (root,root/'docs',root/'website'):
+            for lang in labels:
+                guide=folder/f'Guide-{lang}.html'
+                if not guide.is_file():continue
+                html=guide.read_text(encoding='utf-8')
+                if 'http-equiv="refresh"' in html:continue
+                found+=1
+                self.assertRegex(html,r'<a\b[^>]*href="'+pages[lang]+r'"[^>]*>\s*'+labels[lang]+r'\s*</a>',str(guide))
+                self.assertTrue((folder/pages[lang]).is_file(),str(folder/pages[lang]))
+        self.assertGreaterEqual(found,3)
 class NetworkRetryTests(unittest.TestCase):
     def test_transient_connection_error_is_retried(self):
         import io
