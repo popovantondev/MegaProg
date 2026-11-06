@@ -313,9 +313,63 @@
     });
   }
 
+  /* ---------- side decor: quiet icons in the margins of wide screens ----------
+     One fixed layer (aria-hidden, no pointer events, compositor-only drift), built once after load.
+     Motifs: window.PPK_DECOR (array of image URLs) if the page sets it; else the page's own brand icon
+     (.ppk-brand img); else the icons of all programs (catalog, about). Off with data-ppk-decor="off";
+     the piano game page (data-ppk-slash="off") keeps its own note background. */
+  var DECOR_QUERY = '(min-width: 1280px)';
+  function decorMotifs() {
+    var own = window.PPK_DECOR;
+    if (own && own.length) return Array.prototype.slice.call(own).filter(function (u) { return typeof u === 'string' && u; });
+    var brand = doc.querySelector('.ppk-brand img');
+    if (brand && (brand.currentSrc || brand.src)) return [brand.currentSrc || brand.src];
+    var urls = [];
+    for (var i = 0; i < programs.length; i++) if (programs[i].icon) urls.push(programs[i].icon);
+    return urls;
+  }
+  function buildDecor() {
+    var motifs = decorMotifs();
+    if (!motifs.length) return;
+    var perSide = motifs.length > 1 ? 8 : 6;
+    var layer = el('div', 'ppk-decor'); layer.setAttribute('aria-hidden', 'true');
+    var xs = [0.55, 0.15, 0.8, 0.35, 0.65, 0.1, 0.5, 0.85], rs = [-11, 7, -5, 12, -8, 4, -13, 9];
+    var k = 0;
+    ['l', 'r'].forEach(function (side, s) {
+      var col = el('div', 'ppk-decor-side ppk-decor-' + side);
+      for (var i = 0; i < perSide; i++, k++) {
+        var img = el('img', 'ppk-decor-i');
+        var j = (i + s * 3) % xs.length;
+        img.alt = ''; img.decoding = 'async'; img.draggable = false;
+        img.style.setProperty('--ppk-x', xs[j]);
+        img.style.setProperty('--ppk-y', ((i + 0.2 + 0.5 * ((i * 5 + s * 3) % 4) / 4) / perSide * 100).toFixed(1) + '%');
+        img.style.setProperty('--ppk-r', rs[(i * 3 + s * 5) % rs.length] + 'deg');
+        img.style.setProperty('--ppk-k', (0.72 + 0.28 * (((i * 7 + s * 2) % 5) / 4)).toFixed(2));
+        img.onerror = function () { if (this.parentNode) this.parentNode.removeChild(this); };
+        img.src = local(motifs[(k * 3) % motifs.length]);
+        col.appendChild(img);
+      }
+      layer.appendChild(col);
+    });
+    doc.body.appendChild(layer);
+    requestAnimationFrame(function () { layer.classList.add('ppk-decor-on'); });
+  }
+  function initDecor() {
+    var b = doc.body;
+    if (!window.matchMedia || !b || b.getAttribute('data-ppk-decor') === 'off' || b.getAttribute('data-ppk-slash') === 'off') return;
+    var mq = matchMedia(DECOR_QUERY), built = false;
+    function start() {
+      if (built || !mq.matches) return;
+      built = true;
+      var go = function () { if ('requestIdleCallback' in window) requestIdleCallback(buildDecor, { timeout: 2500 }); else setTimeout(buildDecor, 400); };
+      if (doc.readyState === 'complete') go(); else window.addEventListener('load', go);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', start); else if (mq.addListener) mq.addListener(start);
+    start();
+  }
   function init() {
     root.classList.add('ppk-js');
-    initTheme(); initNav(); rewriteLinks(); initPalette(); initTerminals(); initReveal(); initTabs();
+    initTheme(); initNav(); rewriteLinks(); initPalette(); initTerminals(); initReveal(); initTabs(); initDecor();
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init); else init();
 })();

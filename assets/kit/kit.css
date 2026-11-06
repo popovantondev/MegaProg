@@ -245,3 +245,18 @@ html.ppk-js .ppk-reveal:not(.ppk-in){opacity:0;transform:translateY(14px)}
   html.ppk-js .ppk-reveal:not(.ppk-in){opacity:1;transform:none}
 }
 @media (forced-colors:active){.ppk-pitem[aria-selected="true"]{outline:2px solid Highlight}.ppk-tabs button[aria-selected="true"]{outline:2px solid Highlight}}
+
+/* side decor (kit.js builds it on screens >= 1280px; nothing without JS) */
+.ppk-decor{display:none}
+@media (min-width:1280px){
+  .ppk-decor{display:block;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;container-type:inline-size;opacity:0;transition:opacity 1.2s ease}
+  .ppk-decor.ppk-decor-on{opacity:1}
+  .ppk-decor-side{position:absolute;top:0;bottom:0;width:calc((100cqi - var(--ppk-decor-shell,var(--ppk-shell)))/2);animation:ppk-decor-drift 90s ease-in-out infinite alternate;will-change:transform}
+  .ppk-decor-l{left:0}
+  .ppk-decor-r{right:0;animation-direction:alternate-reverse}
+  .ppk-decor-i{--ppk-sz:clamp(18px,calc(var(--ppk-k,1) * ((100cqi - var(--ppk-decor-shell,var(--ppk-shell)))/2 - 28px)),72px);position:absolute;top:var(--ppk-y,0);left:calc(var(--ppk-x,.5) * (100% - 1.2 * var(--ppk-sz)) + .1 * var(--ppk-sz));width:var(--ppk-sz);height:var(--ppk-sz);object-fit:contain;opacity:.06;transform:rotate(var(--ppk-r,0deg));user-select:none}
+  [data-theme="dark"] .ppk-decor-i{opacity:.08}
+}
+@keyframes ppk-decor-drift{from{transform:translateY(-10px)}to{transform:translateY(10px)}}
+@media print{.ppk-decor{display:none!important}}
+@media (prefers-reduced-motion:reduce){.ppk-decor{transition:none}.ppk-decor-side{animation:none;will-change:auto}}
