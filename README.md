@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="assets/megaprog.svg" width="128" alt="MegaProg Symbol">
+</div>
+
 # MegaProg
 
-**Deutsch** · [Русский](README.ru.md) · [English](README.en.md)
+[Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
 
 <!-- public-release:start -->
 Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.
@@ -20,11 +24,9 @@ Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderu
 **Prüfsummen:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Für macOS herunterladen](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
+**[Webseite](https://popovantondev.github.io/MegaProg/)**
 
-**Apple Silicon · 4.5.1 Preview (Vorschauversion) · GPL-3.0-only**
-
-<p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Plan freigeben. Ausführen. Fortschritt behalten.</strong></p>
+**Plan freigeben. Ausführen. Fortschritt behalten.**
 
 MegaProg ist eine macOS-App, die freigegebene Entwicklungspläne mit OpenAI Codex ausführt. Sie speichert Anforderungen und Fortschritt im Projekt, bearbeitet Aufgaben nacheinander und führt die Prüfungen aus dem Plan aus.
 
@@ -87,6 +89,8 @@ Der Build erfordert einen sauberen Git-Checkout und speichert App, Quellcode, Pr
 ## Datenschutz und Grenzen
 
 MegaProg läuft lokal. Pläne, Status, Prüfprotokolle und Codex-Sitzungsreferenzen liegen unter `.ai-dev/` im ausgewählten Projekt. Prüfen oder löschen Sie diese Daten bei Bedarf. Dieses Repository enthält keine Codex-Anmeldedaten. Codex verarbeitet Aufgaben mit dem Konto und Workspace, bei dem Sie angemeldet sind. Ein Handoff kann lokale Pfade und Aufgabenbeschreibungen enthalten: Prüfen Sie ihn vor dem Anhängen an einen anderen Chat.
+
+## Mitarbeit und Lizenz
 
 Informationen zur Mitarbeit: [CONTRIBUTING.md](CONTRIBUTING.md). Sicherheit: [SECURITY.md](SECURITY.md). Lizenz: [GPL-3.0-only](LICENSE). MegaProg ist ein unabhängiges Community-Projekt und kein OpenAI-Produkt.
 

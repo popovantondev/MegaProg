@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="assets/megaprog.svg" width="128" alt="MegaProg icon">
+</div>
+
 # MegaProg
 
-[Deutsch](README.md) · [Русский](README.ru.md) · **English**
+[Русский](README.ru.md) · [Deutsch](README.md) · **English**
 
 <!-- public-release:start -->
 Run approved development tasks through Codex and preserve requirements, checks and project progress.
@@ -20,11 +24,9 @@ Run approved development tasks through Codex and preserve requirements, checks a
 **Checksums:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Download for macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
+**[Website](https://popovantondev.github.io/MegaProg/index-en.html)**
 
-**Apple Silicon · 4.5.1 Preview · GPL-3.0-only**
-
-<p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Review a plan. Run it. Keep your progress.</strong></p>
+**Review a plan. Run it. Keep your progress.**
 
 MegaProg is a macOS desktop app that runs approved software plans through OpenAI Codex. It stores requirements and progress in your project, runs tasks one at a time, and performs the checks listed in the plan.
 
@@ -87,6 +89,8 @@ The release builder requires a clean Git checkout. It writes the app, source, ch
 ## Privacy and limitations
 
 MegaProg runs locally. Project plans, state, verification logs, and Codex session references are stored in `.ai-dev/` inside the selected project. Review or remove them when appropriate. This repository does not contain your Codex login. Codex processes tasks using the account and workspace you sign in with. Handoffs can contain local paths and task summaries; review them before attaching them to another chat.
+
+## Contributing and license
 
 See [Contributing](CONTRIBUTING.md), [Security](SECURITY.md), and the [GPL-3.0-only license](LICENSE). MegaProg is an independent community project, not an OpenAI product.
 

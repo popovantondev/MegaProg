@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="assets/megaprog.svg" width="128" alt="Значок MegaProg">
+</div>
+
 # MegaProg
 
-[Deutsch](README.md) · **Русский** · [English](README.en.md)
+**Русский** · [Deutsch](README.md) · [English](README.en.md)
 
 <!-- public-release:start -->
 Запускает согласованные задачи разработки через Codex и сохраняет требования, проверки и прогресс проекта.
@@ -20,11 +24,9 @@
 **Контрольные суммы:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Скачать для macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
+**[Сайт](https://popovantondev.github.io/MegaProg/index-ru.html)**
 
-**Apple Silicon · 4.5.1 Preview (Предварительная версия) · GPL-3.0-only**
-
-<p align="center"><img src="assets/megaprog.svg" width="112" alt="MegaProg"><br><strong>Согласуйте план. Запустите его. Сохраните прогресс.</strong></p>
+**Согласуйте план. Запустите его. Сохраните прогресс.**
 
 MegaProg — приложение для macOS, которое выполняет утверждённый план разработки через OpenAI Codex. Оно хранит требования и прогресс в проекте, выполняет задачи по очереди и запускает проверки из плана.
 
@@ -87,6 +89,8 @@ python packaging/build.py --output /tmp/megaprog-release
 ## Данные и ограничения
 
 MegaProg работает локально. Планы, состояние, журналы проверок и ссылки на сессии Codex находятся в `.ai-dev/` выбранного проекта. При необходимости просмотрите или удалите их. В репозитории нет вашего входа в Codex. Codex обрабатывает задачи с учётом аккаунта и рабочего пространства, куда вы вошли. Handoff может содержать локальные пути и сведения о задачах — проверьте его перед прикреплением к другому чату.
+
+## Участие и лицензия
 
 Информация для участников — [CONTRIBUTING.md](CONTRIBUTING.md), безопасность — [SECURITY.md](SECURITY.md), лицензия — [GPL-3.0-only](LICENSE). MegaProg — независимый проект сообщества, не продукт OpenAI.
 
