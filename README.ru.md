@@ -1,5 +1,7 @@
 # MegaProg
 
+[Deutsch](README.md) · **Русский** · [English](README.en.md)
+
 <!-- public-release:start -->
 Запускает согласованные задачи разработки через Codex и сохраняет требования, проверки и прогресс проекта.
 
@@ -18,7 +20,7 @@
 **Контрольные суммы:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Скачать для macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)**
+**[Скачать для macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
 
 **Apple Silicon · 4.5.1 Preview (Предварительная версия) · GPL-3.0-only**
 

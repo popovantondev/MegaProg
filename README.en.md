@@ -1,5 +1,7 @@
 # MegaProg
 
+[Deutsch](README.md) · [Русский](README.ru.md) · **English**
+
 <!-- public-release:start -->
 Run approved development tasks through Codex and preserve requirements, checks and project progress.
 
@@ -18,7 +20,7 @@ Run approved development tasks through Codex and preserve requirements, checks a
 **Checksums:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Download for macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)**
+**[Download for macOS](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
 
 **Apple Silicon · 4.5.1 Preview · GPL-3.0-only**
 

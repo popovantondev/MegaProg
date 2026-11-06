@@ -1,5 +1,7 @@
 # MegaProg
 
+**Deutsch** · [Русский](README.ru.md) · [English](README.en.md)
+
 <!-- public-release:start -->
 Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.
 
@@ -18,7 +20,7 @@ Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderu
 **Prüfsummen:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Für macOS herunterladen](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)**
+**[Für macOS herunterladen](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1)**
 
 **Apple Silicon · 4.5.1 Preview (Vorschauversion) · GPL-3.0-only**
 
