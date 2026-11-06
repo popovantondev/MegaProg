@@ -173,6 +173,7 @@ html:not(.ppk-js) .ppk-theme-btn{display:none}
 .ppk-phead{display:flex;align-items:center;border-bottom:1px solid var(--ppk-line)}
 .ppk-palette-input{flex:1;min-width:0;padding:16px 18px;border:0;background:transparent;color:var(--ppk-ink);font:inherit;font-size:17px;outline:none}
 .ppk-palette-input::placeholder{color:var(--ppk-muted);opacity:1}
+.ppk-overlay .ppk-palette-input:focus-visible{outline:none}
 .ppk-phead:focus-within{box-shadow:inset 0 -2px 0 var(--ppk-focus)}
 .ppk-pclose{margin-right:12px;padding:6px 8px;border:1px solid var(--ppk-line);border-radius:7px;background:var(--ppk-bg);color:var(--ppk-muted);font:600 12px/1 var(--ppk-mono);cursor:pointer}
 .ppk-plist{max-height:min(420px,55vh);margin:0;padding:6px;overflow:auto;list-style:none}

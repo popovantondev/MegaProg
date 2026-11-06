@@ -143,6 +143,10 @@
       if (a && +a.getAttribute('data-i') !== sel) select(+a.getAttribute('data-i'), false);
     });
     overlay.addEventListener('keydown', onPaletteKey);
+    list.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('.ppk-pitem');
+      if (a && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button)) leavePalette();
+    });
     return { overlay: overlay, input: input, list: list, empty: empty, live: live, closeBtn: closeBtn };
   }
 
@@ -199,13 +203,22 @@
     if (back && back.focus) back.focus();
   }
 
+  /* Leaving the page from the palette: hide it and unlock scrolling first, so a page restored from the
+     back/forward cache never comes back with an open palette and a frozen scroll. */
+  function leavePalette() {
+    if (ui) ui.overlay.hidden = true;
+    root.classList.remove('ppk-lock');
+  }
+  window.addEventListener('pageshow', function (e) { if (e.persisted) leavePalette(); });
+  window.addEventListener('pagehide', leavePalette);
+
   function onPaletteKey(e) {
     if (e.key === 'Escape') { e.preventDefault(); closePalette(); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); if (results.length) select(Math.min(sel + 1, results.length - 1), true); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); if (results.length) select(Math.max(sel - 1, 0), true); }
     else if (e.key === 'Enter' && e.target === ui.input) {
       var a = ui.list.querySelector('.ppk-pitem[aria-selected="true"]');
-      if (a) { e.preventDefault(); location.href = a.href; }
+      if (a) { e.preventDefault(); leavePalette(); location.href = a.href; }
     } else if (e.key === 'Tab') {
       var first = ui.input, last = ui.closeBtn;
       if (e.shiftKey && doc.activeElement === first) { e.preventDefault(); last.focus(); }
