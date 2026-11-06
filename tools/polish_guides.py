@@ -122,6 +122,7 @@ def polish_pages():
         if lang not in TEXT:
             continue
         t = TEXT[lang]
+        s = re.sub(r'<title>.*?</title>', lambda _: '<title>%s</title>' % e(f'{d["name"]} — {t["guide"]}'), s, count=1, flags=re.S)
         # Keep release-summary generator output in sync when removing self links.
         start = s.find('<!-- public-release:start -->')
         end = s.find('<!-- public-release:end -->')

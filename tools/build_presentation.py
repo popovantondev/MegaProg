@@ -55,6 +55,8 @@ TEXT = {
 def load():
     cfg = json.loads((ROOT / 'tools/presentation.json').read_text(encoding='utf-8'))
     d = json.loads((ROOT / 'public-release.json').read_text(encoding='utf-8'))
+    if d.get('tag', '').startswith('v' + d['version']):
+        d['version'] = d['tag'][1:]  # the pages show the release tag (4.5.1-preview.1), like the release itself
     return cfg, d
 
 
@@ -101,12 +103,36 @@ def nav_html(cfg, d, lang, page):
         f'  </nav>\n</div>')
 
 
+def tagline(d, lang):
+    """Gist for <title>: the first sentence of the hero description, without the final full stop."""
+    return re.split(r'(?<=[.!?])\s', d['description'][lang].strip())[0].rstrip('.')
+
+
+LEGAL_LINKS = {'ru': ('Сообщить об ошибке', 'Права'),
+               'de': ('Problem melden', 'Rechte'),
+               'en': ('Report a problem', 'Rights')}
+
+
+def rights_url(d, lang):
+    """Rights page of the repository: RIGHTS in the page language, else RIGHTS.md, else LICENSE; None without any."""
+    for name in (f'RIGHTS.{lang}.md', 'RIGHTS.md', 'LICENSE'):
+        if (ROOT / name).is_file():
+            return d['source_url'] + '/blob/main/' + name
+    return None
+
+
 def footer_html(d, lang):
+    """Footer of every site, one order: Impressum, Datenschutz, rights (if the repository has them), report a problem, GitHub."""
     t = TEXT[lang]
+    issue_label, rights_label = LEGAL_LINKS[lang]
+    rights = rights_url(d, lang)
+    links = [f'<a href="{PROFILE}impressum.html">Impressum</a>', f'<a href="{PROFILE}datenschutz.html">Datenschutz</a>']
+    if rights:
+        links.append(f'<a href="{e(rights)}">{rights_label}</a>')
+    links += [f'<a href="{e(d["feedback_url"])}">{issue_label}</a>', f'<a href="{e(d["source_url"])}">GitHub</a>']
     return (
-        f'<footer class="ppk-footer">\n  <span>© 2026 Anton Popov · {e(d["name"])} {e(d["version"])}</span>\n'
-        f'  <nav aria-label="{e(t["legal"])}"><a href="{PROFILE}impressum.html">Impressum</a>'
-        f'<a href="{PROFILE}datenschutz.html">Datenschutz</a><a href="{e(d["source_url"])}">GitHub</a></nav>\n</footer>')
+        f'<footer class="ppk-footer">\n<span>© 2026 Anton Popov · {e(d["name"])} {e(d["version"])}</span>\n'
+        f'<nav aria-label="{e(t["legal"])}">' + ''.join(links) + '</nav>\n</footer>')
 
 
 def head_assets(cfg, rel=''):
@@ -200,7 +226,7 @@ def landing_html(cfg, d, lang):
     notice = f'<p class="ppk-notice">{e(extra.strip())}</p>' if extra.strip() else ''
     guide = 'Guide-' + lang + '.html'
     primary = f'<a class="ppk-btn ppk-btn-primary" href="{e(target)}">{e(action)}</a>\n' if ready else ''
-    title = f'{d["name"]} — {t["guide"]} · {status}'
+    title = f'{d["name"]} — {tagline(d, lang)}'
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
