@@ -52,14 +52,17 @@ html.ppk-lock{overflow:hidden}
 .ppk-search-btn:has(svg)::before,.ppk-icon-btn:has(svg)::before,.ppk-btn-gh:has(svg)::before{display:none}
 
 /* ---------- header: static markup, JS only improves it ---------- */
-.ppk-nav-wrap{position:sticky;top:0;z-index:40;padding:10px 0 0;transition:padding .3s}
+.ppk-nav-wrap{position:sticky;top:0;z-index:40;padding:10px 0 0}
 .ppk-nav-wrap.ppk-floating{padding-inline:8px}
-.ppk-nav{max-width:var(--ppk-shell);margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 28px;border:1px solid transparent;border-radius:0;font:14px/1.3 var(--ppk-font);color:var(--ppk-ink);transition:max-width .35s cubic-bezier(.2,.8,.2,1),padding .35s cubic-bezier(.2,.8,.2,1),border-radius .35s,background-color .35s,box-shadow .35s}
+.ppk-nav{position:relative;isolation:isolate;max-width:var(--ppk-shell);margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 28px;border:1px solid transparent;border-radius:0;font:14px/1.3 var(--ppk-font);color:var(--ppk-ink);transition:border-color .25s,border-radius .25s}
+/* Glass pill is a separate layer: the header jump to the pill changes layout once, the glass, blur and shadow only fade in (opacity), so scrolling past the threshold stays cheap. */
+.ppk-nav::before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;background:var(--ppk-glass);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 10px 30px -18px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s}
 .ppk-nav *,.ppk-nav *::before,.ppk-nav *::after{box-sizing:border-box}
-.ppk-floating .ppk-nav{max-width:980px;padding:8px 10px 8px 16px;border-color:var(--ppk-line);border-radius:var(--ppk-radius-pill);background:var(--ppk-glass);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.ppk-floating .ppk-nav{max-width:980px;padding:8px 10px 8px 16px;border-color:var(--ppk-line);border-radius:var(--ppk-radius-pill)}
+.ppk-floating .ppk-nav::before{opacity:1}
 .ppk-brand{display:flex;align-items:center;gap:10px;min-width:0;font-size:16px;font-weight:750;color:var(--ppk-ink);text-decoration:none;white-space:nowrap}
 .ppk-brand img{width:34px;height:34px;flex:none;border-radius:9px}
-.ppk-brand span{overflow:hidden;text-overflow:ellipsis}
+.ppk-brand span{overflow:hidden;text-overflow:ellipsis;padding:3px 4px 3px 0;margin:-3px -4px -3px 0}
 .ppk-spacer{flex:1}
 .ppk-back{display:inline-flex;align-items:center;min-height:38px;font-size:14px;font-weight:650;color:var(--ppk-accent);text-decoration:none;white-space:nowrap}
 .ppk-back:hover{text-decoration:underline;text-underline-offset:4px}
@@ -237,7 +240,7 @@ html.ppk-js .ppk-reveal:not(.ppk-in){opacity:0;transform:translateY(14px)}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .ppk-nav-wrap,.ppk-nav,.ppk-pill,.ppk-btn,.ppk-chips span,.ppk-app-card,.ppk-reveal,.ppk-progress i,.ppk-page{transition:none!important}
+  .ppk-nav-wrap,.ppk-nav,.ppk-nav::before,.ppk-pill,.ppk-btn,.ppk-chips span,.ppk-app-card,.ppk-reveal,.ppk-progress i,.ppk-page{transition:none!important}
   .ppk-palette,.ppk-app-card,.ppk-rows li,.ppk-cursor,.ppk-live::before{animation:none!important}
   html.ppk-js .ppk-reveal:not(.ppk-in){opacity:1;transform:none}
 }
