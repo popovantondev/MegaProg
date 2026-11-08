@@ -1,10 +1,24 @@
-<div align="center">
-  <img src="assets/megaprog.svg" width="128" alt="MegaProg Symbol">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/MegaProg/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/header-de-dark.8e7f2557.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/header-de-light.dbc97e0a.svg" width="880" height="188" alt="MegaProg — Führt freigegebene Entwicklungsaufgaben aus, speichert Fortschritt. macOS · Apple Silicon, Vorabversion 4.5.1"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # MegaProg
 
 [Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-download-de-dark.3d70c0f0.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-download-de-light.40c02b68.svg" width="171" height="36" alt="Herunterladen"></picture></a>
+<a href="https://popovantondev.github.io/MegaProg/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-website-de-dark.5a66717b.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-website-de-light.85891dc3.svg" width="129" height="36" alt="Webseite"></picture></a>
+<a href="https://popovantondev.github.io/MegaProg/Guide-de.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-guide-de-dark.c36f207e.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-guide-de-light.7121beb4.svg" width="134" height="36" alt="Anleitung"></picture></a>
+<a href="https://github.com/popovantondev/MegaProg/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-bug-de-dark.e07bf06d.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/btn-bug-de-light.cd52ad2e.svg" width="168" height="36" alt="Fehler melden"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/screenshots/de-plan.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/preview-de-dark.6a28b6d3.webp"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/preview-de-light.28f4fbc7.webp" width="880" height="516" alt="Oberfläche von MegaProg"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/screenshots/de-plan.png">Ganzer Screenshot</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/divider-dark.3003859f.svg"><img src="https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/divider-light.b89e4227.svg" width="880" height="6" alt="Trennlinie"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.
@@ -24,17 +38,19 @@ Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderu
 **Prüfsummen:** [`SHA256SUMS.txt`](https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt)
 <!-- public-release:end -->
 
-**[Webseite](https://popovantondev.github.io/MegaProg/)**
-
 **Plan freigeben. Ausführen. Fortschritt behalten.**
 
 MegaProg ist eine macOS-App, die freigegebene Entwicklungspläne mit OpenAI Codex ausführt. Sie speichert Anforderungen und Fortschritt im Projekt, bearbeitet Aufgaben nacheinander und führt die Prüfungen aus dem Plan aus.
 
 ## Demo: zwei Rechenfunktionen
 
-<a href="docs/screenshots/de-plan.png"><img src="docs/screenshots/de-plan.png" width="100%" alt="Planprüfung auf Deutsch"></a>
+<details>
+<summary>Bilder anzeigen</summary>
 
-<a href="docs/screenshots/de-result.png"><img src="docs/screenshots/de-result.png" width="100%" alt="Geprüftes Ergebnis auf Deutsch"></a>
+- [Planprüfung auf Deutsch](https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/screenshots/de-plan.png)
+- [Geprüftes Ergebnis auf Deutsch](https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/screenshots/de-result.png)
+
+</details>
 
 Die Bilder zeigen den Übungsplan und seinen Abschluss nach zwei echten Codex-Arbeitsrunden. Der Text wurde für die Anzeige übersetzt, der Projektpfad durch einen Platzhalter ersetzt und private Daten sowie Nutzungswerte entfernt. [Russische](README.ru.md#пример-две-функции-калькулятора) und [englische](README.en.md#demo-two-calculator-functions) Bilder stehen in den jeweiligen Anleitungen.
 

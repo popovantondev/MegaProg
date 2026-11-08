@@ -55,8 +55,7 @@ TEXT = {
 def load():
     cfg = json.loads((ROOT / 'tools/presentation.json').read_text(encoding='utf-8'))
     d = json.loads((ROOT / 'public-release.json').read_text(encoding='utf-8'))
-    if d.get('tag', '').startswith('v' + d['version']):
-        d['version'] = d['tag'][1:]  # the pages show the release tag (4.5.1-preview.1), like the release itself
+    # the pages show the same version as README, the guides and the app (4.5.1); the "preview" status is a separate word
     return cfg, d
 
 
