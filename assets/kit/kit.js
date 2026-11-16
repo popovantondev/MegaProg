@@ -122,7 +122,9 @@
     input.type = 'text'; input.id = 'ppk-pq'; input.placeholder = S.ph; input.autocomplete = 'off'; input.spellcheck = false;
     input.setAttribute('role', 'combobox'); input.setAttribute('aria-expanded', 'true'); input.setAttribute('aria-controls', 'ppk-plist');
     input.setAttribute('aria-autocomplete', 'list'); input.setAttribute('aria-label', S.label); input.setAttribute('enterkeyhint', 'go');
-    var closeBtn = el('button', 'ppk-pclose', 'Esc'); closeBtn.type = 'button'; closeBtn.setAttribute('aria-label', S.closeBtn);
+    /* a finger has no Esc key: the word "Close" instead of the keyboard label */
+    var coarse = !!(window.matchMedia && matchMedia('(hover: none) and (pointer: coarse)').matches);
+    var closeBtn = el('button', 'ppk-pclose', coarse ? S.closeBtn : 'Esc'); closeBtn.type = 'button'; closeBtn.setAttribute('aria-label', S.closeBtn);
     head.appendChild(input); head.appendChild(closeBtn);
     var list = el('ul', 'ppk-plist'); list.id = 'ppk-plist'; list.setAttribute('role', 'listbox'); list.setAttribute('aria-label', S.label);
     var empty = el('p', 'ppk-pempty', S.none); empty.setAttribute('role', 'status'); empty.hidden = true;

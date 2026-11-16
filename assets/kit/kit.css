@@ -291,3 +291,5 @@ html.ppk-js .ppk-reveal:not(.ppk-in){opacity:0;transform:translateY(14px)}
 @keyframes ppk-decor-drift{from{transform:translateY(-10px)}to{transform:translateY(10px)}}
 @media print{.ppk-decor{display:none!important}}
 @media (prefers-reduced-motion:reduce){.ppk-decor{transition:none}.ppk-decor-side{animation:none;will-change:auto}}
+/* very narrow phones: the technology chip goes under the source-code label instead of beside it in two tall blocks */
+@media (max-width:420px){.ppk-btn-gh{flex-wrap:wrap;row-gap:6px}.ppk-btn-gh .ppk-chip{flex:1 0 100%;justify-content:center;text-align:center}}
